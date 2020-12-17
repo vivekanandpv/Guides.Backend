@@ -29,6 +29,8 @@ namespace Guides.Backend.Domain
         public DateTime? LockedOn { get; set; }
         public DateTime? AdminResetOn { get; set; }
         public DateTime? LoginResetOn { get; set; }
+        public DateTime? AdminBlockOn { get; set; }
+        public DateTime? LoginBlockOn { get; set; }
         public DateTime? PasswordResetOn { get; set; }
         public bool IsAdminLocked { get; set; }
         public bool IsLoginLocked { get; set; }

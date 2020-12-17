@@ -10,7 +10,9 @@ namespace Guides.Backend.ViewModels.Auth
 {
     public class AuthResetPasswordViewModel
     {
-        [Required, MaxLength(10)]
+        [MaxLength(100), Required]
+        public string Username { get; set; }
+        [Required, MaxLength(50)]
         public string ResetKey { get; set; }
         [Required, MaxLength(50), RegularExpression(pattern:GeneralStaticDataProvider.PasswordPolicyRegEx, ErrorMessage = GeneralStaticDataProvider.PasswordPolicyErrorMessage)]
         public string NewPassword { get; set; }
@@ -25,6 +27,8 @@ namespace Guides.Backend.ViewModels.Auth
 
     public class AuthChangePasswordViewModel
     {
+        [MaxLength(100), Required]
+        public string Username { get; set; }
         [Required, MaxLength(50), RegularExpression(pattern:GeneralStaticDataProvider.PasswordPolicyRegEx, ErrorMessage = GeneralStaticDataProvider.PasswordPolicyErrorMessage)]
         public string CurrentPassword { get; set; }
         [Required, MaxLength(50), RegularExpression(pattern:GeneralStaticDataProvider.PasswordPolicyRegEx, ErrorMessage = GeneralStaticDataProvider.PasswordPolicyErrorMessage)]
@@ -37,7 +41,7 @@ namespace Guides.Backend.ViewModels.Auth
     {
         [MaxLength(100), Required]
         public string FullName { get; set; }
-        [MaxLength(200), Required]
+        [MaxLength(100), Required]
         public string Email { get; set; }
         [Required]
         public long MobileNumber { get; set; }

@@ -14,9 +14,9 @@ namespace Guides.Backend.Services.Auth
         Task<AuthTokenViewModel> Login(AuthLoginViewModel viewModel);
         Task<AuthResetKeyViewModel> Register(AuthRegisterViewModel viewModel);
         Task ChangePassword(AuthChangePasswordViewModel viewModel);
-        Task<AuthResetKeyViewModel> AdminReset(int userId);
-        Task<AuthResetKeyViewModel> LoginReset(int userId);
-        Task AdminBlock(int userId);
+        Task<AuthResetKeyViewModel> AdminReset(string email);
+        Task<AuthResetKeyViewModel> LoginReset(string email);
+        Task AdminBlock(string email);
         Task ResetPassword(AuthResetPasswordViewModel viewModel);
         Task<bool> IsLoginBlocked(string email);
     }

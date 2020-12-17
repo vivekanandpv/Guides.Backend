@@ -47,7 +47,7 @@ namespace Guides.Backend.Configuration
         {
             services.AddAutoMapper(config =>
             {
-                config.AddProfile<GuidesAutomapperProfile>();
+                config.AddProfile<GuidesAutoMapperProfile>();
             });
 
             return services;

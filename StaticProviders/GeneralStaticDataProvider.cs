@@ -24,6 +24,7 @@ namespace Guides.Backend.StaticProviders
             @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$";
 
         public const int MaxFailedAttempts = 5;
+        public const int ResetKeyExpiresInHours = 1;
 
         //  Log Categories
         public const string AuthLogCategory = "Auth Service";

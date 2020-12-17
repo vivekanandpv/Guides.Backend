@@ -8,9 +8,9 @@ using Guides.Backend.ViewModels.Auth;
 
 namespace Guides.Backend.Configuration
 {
-    public class GuidesAutomapperProfile:Profile
+    public class GuidesAutoMapperProfile:Profile
     {
-        public GuidesAutomapperProfile()
+        public GuidesAutoMapperProfile()
         {
             CreateMap<AuthRegisterViewModel, User>();
         }
