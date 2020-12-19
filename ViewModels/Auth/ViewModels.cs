@@ -47,7 +47,7 @@ namespace Guides.Backend.ViewModels.Auth
         public long MobileNumber { get; set; }
         [MaxLength(50), Required]
         public string DisplayName { get; set; }
-        [Required]
+        [Required, MaxLength(50)]
         public string Country { get; set; }
         [MaxLength(50)]
         public string IdentityInformation { get; set; }

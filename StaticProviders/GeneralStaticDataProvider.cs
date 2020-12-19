@@ -29,6 +29,11 @@ namespace Guides.Backend.StaticProviders
         public const Country CountryIndia = Country.India;
         public const Country CountryUganda = Country.Uganda;
 
+        
+        
+        
+        //  Endpoints
+
         //  Auth policies
         public const string Roles = "Roles";
         public const string GeneralAdministratorPolicy = "GeneralAdministratorPolicy";
@@ -82,5 +87,7 @@ namespace Guides.Backend.StaticProviders
             return new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        
     }
 }

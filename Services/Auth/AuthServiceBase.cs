@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
@@ -116,6 +117,12 @@ namespace Guides.Backend.Services.Auth
                     throw new RegistrationFailedException();
                 }
 
+                if (!CanRegisterForRole(role, region))
+                {
+                    _logger.LogInformation($"Prevented creation of prohibited role {role} for {viewModel.Email}");
+                    throw new RegistrationFailedException();
+                }
+                
                 user.UserRoles.Add(new UserRole
                 {
                     User = user,
@@ -498,7 +505,22 @@ namespace Guides.Backend.Services.Auth
 
             return conversionResult && region.Country == country;
         }
+
+        private bool CanRegisterForRole(string role, AuthRegionViewModel viewModel)
+        {
+            if (viewModel.IsMaster)
+            {
+                return true;
+            }
+
+            return !IsRoleAnAdministrator(role);
+        }
+
+        private bool IsRoleAnAdministrator(string role)
+        {
+            return GeneralStaticDataProvider.GeneralAdministratorGroup.Any(r => r == role)
+                   || GeneralStaticDataProvider.IndiaAdministratorGroup.Any(r => r == role)
+                   || GeneralStaticDataProvider.UgandaAdministratorGroup.Any(r => r == role);
+        }
     }
-
-
 }
