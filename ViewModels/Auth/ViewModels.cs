@@ -47,15 +47,14 @@ namespace Guides.Backend.ViewModels.Auth
         public long MobileNumber { get; set; }
         [MaxLength(50), Required]
         public string DisplayName { get; set; }
-        public Country Country { get; set; }
+        [Required]
+        public string Country { get; set; }
         [MaxLength(50)]
         public string IdentityInformation { get; set; }
         [MaxLength(50)]
         public string OfficialPosition { get; set; }
         [Required, MinLength(1)] 
         public string[] Roles { get; set; }
-        [Required, RegularExpression(pattern:GeneralStaticDataProvider.PasswordPolicyRegEx, ErrorMessage = GeneralStaticDataProvider.PasswordPolicyErrorMessage)]
-        public string Password { get; set; }
     }
 
     public class AuthLoginViewModel
@@ -76,5 +75,17 @@ namespace Guides.Backend.ViewModels.Auth
         public string Email { get; set; }
         public string DisplayName { get; set; }
         public string[] Roles { get; set; }
+    }
+    
+    public class AuthAdminActionViewModel
+    {
+        [Required, MaxLength(100)]
+        public string Username { get; set; }
+    }
+
+    public class AuthRegionViewModel
+    {
+        public bool IsMaster { get; set; }
+        public Country? Country { get; set; }
     }
 }

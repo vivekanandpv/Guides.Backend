@@ -10,7 +10,9 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Guides.Backend.Configuration;
 using Guides.Backend.Data;
+using Guides.Backend.Exceptions.Auth;
 using Guides.Backend.StaticProviders;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -32,7 +34,11 @@ namespace Guides.Backend
                 .AddApiControllers()
                 .AddCorsConfiguration()
                 .AddGuidesContext(_configuration)
-                .AddAutoMapperConfigured();
+                .AddAutoMapperConfigured()
+                .AddAuthenticationConfigured()
+                .AddAuthorizationConfigured()
+                .AddRepositories()
+                .AddServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,9 +49,15 @@ namespace Guides.Backend
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseAggregatedExceptionHandler();
+
+            //app.UseAuthentication();
+
             app.UseRouting();
 
             app.UseCors();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

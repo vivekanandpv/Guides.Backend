@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Guides.Backend.Domain;
 
 namespace Guides.Backend.StaticProviders
 {
@@ -25,6 +26,43 @@ namespace Guides.Backend.StaticProviders
 
         public const int MaxFailedAttempts = 5;
         public const int ResetKeyExpiresInHours = 1;
+        public const Country CountryIndia = Country.India;
+        public const Country CountryUganda = Country.Uganda;
+
+        //  Auth policies
+        public const string Roles = "Roles";
+        public const string GeneralAdministratorPolicy = "GeneralAdministratorPolicy";
+        public const string IndiaAdministratorPolicy = "IndiaAdministratorPolicy";
+        public const string UgandaAdministratorPolicy = "UgandaAdministratorPolicy";
+        public const string IndiaUserPolicy = "IndiaUserPolicy";
+        public const string UgandaUserPolicy = "UgandaUserPolicy";
+        public const string IndiaDataAnalystPolicy = "IndiaDataAnalystPolicy";
+        public const string UgandaDataAnalystPolicy = "UgandaDataAnalystPolicy";
+        public const string ProjectDataAnalystPolicy = "ProjectDataAnalystPolicy";
+        public const string AllUserPolicy = "AllUserPolicy";
+
+        public static readonly string[] GeneralAdministratorGroup = {"GeneralAdministrator", "ProgramCoordinator"};
+        public static readonly string[] IndiaAdministratorGroup = {"GeneralAdministrator", "ProgramCoordinator", "IndiaAdministrator"};
+        public static readonly string[] UgandaAdministratorGroup = {"GeneralAdministrator", "ProgramCoordinator", "UgandaAdministrator"};
+        public static readonly string[] IndiaUserGroup = {"GeneralAdministrator", "ProgramCoordinator", "IndiaResearchAssistant", "IndiaFieldOperative"};
+        public static readonly string[] UgandaUserGroup = {"GeneralAdministrator", "ProgramCoordinator", "UgandaResearchAssistant", "UgandaFieldOperative"};
+        public static readonly string[] IndiaDataAnalystGroup = {"GeneralAdministrator", "ProgramCoordinator", "IndiaAdministrator", "IndiaDataAnalyst", "ProjectDataAnalyst"};
+        public static readonly string[] UgandaDataAnalystGroup = {"GeneralAdministrator", "ProgramCoordinator", "UgandaAdministrator", "UgandaDataAnalyst", "ProjectDataAnalyst"};
+        public static readonly string[] ProjectDataAnalystGroup = {"GeneralAdministrator", "ProgramCoordinator", "ProjectDataAnalyst"};
+        public static readonly string[] AllUserGroup =
+        {
+            "GeneralAdministrator",
+            "IndiaAdministrator",
+            "UgandaAdministrator",
+            "ProgramCoordinator",
+            "IndiaResearchAssistant",
+            "UgandaResearchAssistant",
+            "IndiaFieldOperative",
+            "UgandaFieldOperative",
+            "IndiaDataAnalyst",
+            "UgandaDataAnalyst",
+            "ProjectDataAnalyst",
+        };
 
         //  Log Categories
         public const string AuthLogCategory = "Auth Service";

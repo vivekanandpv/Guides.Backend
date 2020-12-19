@@ -11,15 +11,13 @@ namespace Guides.Backend.Services.Auth
 {
     public interface IAuthService
     {
+        AuthRegionViewModel GetRegion();
         Task<AuthTokenViewModel> Login(AuthLoginViewModel viewModel);
         Task<AuthResetKeyViewModel> Register(AuthRegisterViewModel viewModel);
         Task ChangePassword(AuthChangePasswordViewModel viewModel);
-        Task<AuthResetKeyViewModel> AdminReset(string email);
-        Task<AuthResetKeyViewModel> LoginReset(string email);
-        Task AdminBlock(string email);
+        Task<AuthResetKeyViewModel> AdminReset(AuthAdminActionViewModel viewModel);
+        Task<AuthResetKeyViewModel> LoginReset(AuthAdminActionViewModel viewModel);
+        Task AdminBlock(AuthAdminActionViewModel viewModel);
         Task ResetPassword(AuthResetPasswordViewModel viewModel);
-        Task<bool> IsLoginBlocked(string email);
     }
-
-    
 }

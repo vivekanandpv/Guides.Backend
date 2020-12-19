@@ -40,6 +40,11 @@ namespace Guides.Backend.Domain
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public ICollection<UserRole> UserRoles { get; set; }
+
+        public User()
+        {
+            this.UserRoles = new HashSet<UserRole>();
+        }
     }
 
     public class Role
@@ -48,6 +53,11 @@ namespace Guides.Backend.Domain
         [MaxLength(50), Required]
         public string Name { get; set; }
         public ICollection<UserRole> UserRoles { get; set; }
+
+        public Role()
+        {
+            this.UserRoles = new HashSet<UserRole>();
+        }
     }
 
     public class UserRole
