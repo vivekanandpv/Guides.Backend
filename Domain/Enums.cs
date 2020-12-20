@@ -138,4 +138,11 @@ namespace Guides.Backend.Domain
         Daily_1_to_2_times,
         Daily_3_or_more_times
     }
+
+    public enum VoluntaryExitReason
+    {
+        Relocation,
+        Not_interested,
+        Not_traceable
+    }
 }

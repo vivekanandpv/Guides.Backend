@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Guides.Backend.Data;
 using Guides.Backend.Repositories.Auth;
+using Guides.Backend.Repositories.Baseline.Implementations;
+using Guides.Backend.Repositories.Baseline.Interfaces;
 using Guides.Backend.Services.Auth;
 using Guides.Backend.StaticProviders;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Guides.Backend.Configuration
@@ -43,7 +46,11 @@ namespace Guides.Backend.Configuration
             IConfiguration configuration)
         {
             services.AddDbContext<GuidesContext>(options =>
-                    options.UseSqlServer(GeneralStaticDataProvider.GuidesConnection));
+                {
+                    options
+                        .UseLazyLoadingProxies()
+                        .UseSqlServer(GeneralStaticDataProvider.GuidesConnection);
+                });
 
             return services;
         }
@@ -151,7 +158,16 @@ namespace Guides.Backend.Configuration
 
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            services.AddScoped<IAuthRepository, AuthRepository>();
+            //  Auth
+            services.TryAddScoped<IAuthRepository, AuthRepository>();
+            
+            //  Domain: Baseline
+            services.TryAddScoped<IRespondentRepository, RespondentRepository>();
+            services.TryAddScoped<ISocioDemographicRepository, SocioDemographicRepository>();
+            services.TryAddScoped<IPregnancyAndGdmRiskFactorsRepository, PregnancyAndGdmRiskFactorsRepository>();
+            services.TryAddScoped<ITobaccoAndAlcoholUseRepository, TobaccoAndAlcoholUseRepository>();
+            services.TryAddScoped<IPhysicalActivityRepository, PhysicalActivityRepository>();
+            services.TryAddScoped<IDietaryBehaviourRepository, DietaryBehaviourRepository>();
 
             return services;
         }

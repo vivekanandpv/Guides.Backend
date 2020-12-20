@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Guides.Backend.Domain;
+using Guides.Backend.ViewModels.Baseline;
 
 namespace Guides.Backend.StaticProviders
 {
@@ -71,6 +72,12 @@ namespace Guides.Backend.StaticProviders
 
         //  Log Categories
         public const string AuthLogCategory = "Auth Service";
+        public const string RespondentCategory = "Respondent Service";
+        public const string SocioDemographicCategory = "SocioDemographic Service";
+        public const string PregnancyAndGdmRiskFactorsCategory = "PregnancyAndGdmRiskFactors Service";
+        public const string TobaccoAndAlcoholUseCategory = "TobaccoAndAlcoholUse Service";
+        public const string PhysicalActivityCategory = "PhysicalActivity Service";
+        public const string DietaryBehaviourCategory = "DietaryBehaviour Service";
 
         //  Messages
         public const string PasswordPolicyErrorMessage =
@@ -88,6 +95,67 @@ namespace Guides.Backend.StaticProviders
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
+        public static RespondentIndiaListViewModel ToIndiaListViewModel(Respondent respondent)
+        {
+            return new RespondentIndiaListViewModel
+            {
+                ANM = respondent.ANM,
+                ANMTelephone1 = respondent.ANMTelephone1,
+                ANMTelephone2 = respondent.ANMTelephone2,
+                AddressLine1 = respondent.AddressLine1,
+                AddressLine2 = respondent.AddressLine2,
+                Asha = respondent.Asha,
+                AshaTelephone1 = respondent.AshaTelephone1,
+                AshaTelephone2 = respondent.AshaTelephone2,
+                City = respondent.City,
+                FullName = respondent.FullName,
+                HusbandName = respondent.HusbandName,
+                Id = respondent.Id,
+                RegisteredBy = respondent.User.Email,
+                OwnAMobilePhone = respondent.OwnAMobilePhone,
+                PHC = respondent.PHC,
+                Person1 = respondent.Person1,
+                Person2 = respondent.Person2,
+                Person3 = respondent.Person3,
+                PostalCode = respondent.PostalCode,
+                RCHID = respondent.RCHID,
+                RegisteredOn = respondent.RegisteredOn,
+                RegistrationLatitude = respondent.RegistrationLatitude,
+                RegistrationLongitude = respondent.RegistrationLongitude,
+                SecondaryAccessToMobilePhone = respondent.SecondaryAccessToMobilePhone,
+                SecondaryAccessToSmartphone = respondent.SecondaryAccessToSmartphone,
+                Telephone1 = respondent.Telephone1,
+                Telephone2 = respondent.Telephone2,
+                Telephone3 = respondent.Telephone3
+            };
+        }
         
+        public static RespondentUgandaListViewModel ToUgandaListViewModel(Respondent respondent)
+        {
+            return new RespondentUgandaListViewModel
+            {
+                AddressLine1 = respondent.AddressLine1,
+                AddressLine2 = respondent.AddressLine2,
+                City = respondent.City,
+                FullName = respondent.FullName,
+                HusbandName = respondent.HusbandName,
+                Id = respondent.Id,
+                RegisteredBy = respondent.User.Email,
+                OwnAMobilePhone = respondent.OwnAMobilePhone,
+                Person1 = respondent.Person1,
+                Person2 = respondent.Person2,
+                PostalCode = respondent.PostalCode,
+                RegisteredOn = respondent.RegisteredOn,
+                RegistrationLatitude = respondent.RegistrationLatitude,
+                RegistrationLongitude = respondent.RegistrationLongitude,
+                SecondaryAccessToMobilePhone = respondent.SecondaryAccessToMobilePhone,
+                SecondaryAccessToSmartphone = respondent.SecondaryAccessToSmartphone,
+                Telephone1 = respondent.Telephone1,
+                Telephone2 = respondent.Telephone2,
+                HealthFacility = respondent.HealthFacility,
+                HospitalId = respondent.HospitalId
+            };
+        }
+
     }
 }

@@ -26,6 +26,8 @@ namespace Guides.Backend.Data
         public DbSet<TobaccoAndAlcoholUse> TobaccoAndAlcoholUseCollection { get; set; }
         public DbSet<PhysicalActivity> PhysicalActivityCollection { get; set; }
         public DbSet<DietaryBehaviour> DietaryBehaviourCollection { get; set; }
+        public DbSet<DeathRecord> DeathRecords { get; set; }
+        public DbSet<LossToFollowUp> LossToFollowUpCollection { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -76,6 +78,16 @@ namespace Guides.Backend.Data
                 .HasOne(r => r.DietaryBehaviour)
                 .WithOne(d => d.Respondent)
                 .HasForeignKey<DietaryBehaviour>(d => d.RespondentId);
+            
+            modelBuilder.Entity<Respondent>()
+                .HasOne(r => r.DeathRecord)
+                .WithOne(d => d.Respondent)
+                .HasForeignKey<DeathRecord>(d => d.RespondentId);
+            
+            modelBuilder.Entity<Respondent>()
+                .HasOne(r => r.LossToFollowUp)
+                .WithOne(d => d.Respondent)
+                .HasForeignKey<LossToFollowUp>(d => d.RespondentId);
         }
     }
 }

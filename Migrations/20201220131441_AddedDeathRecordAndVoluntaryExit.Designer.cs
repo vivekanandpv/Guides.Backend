@@ -4,14 +4,16 @@ using Guides.Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Guides.Backend.Migrations
 {
     [DbContext(typeof(GuidesContext))]
-    partial class GuidesContextModelSnapshot : ModelSnapshot
+    [Migration("20201220131441_AddedDeathRecordAndVoluntaryExit")]
+    partial class AddedDeathRecordAndVoluntaryExit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,9 +27,6 @@ namespace Guides.Backend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
-
-                    b.Property<DateTime>("DateOfActualEntry")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DateOfDeath")
                         .HasColumnType("datetime2");
@@ -73,9 +72,6 @@ namespace Guides.Backend.Migrations
 
                     b.Property<int>("Carbohydrates")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("DateOfActualEntry")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("EggsOrDairy")
                         .HasColumnType("int");
@@ -130,60 +126,12 @@ namespace Guides.Backend.Migrations
                     b.ToTable("DietaryBehaviourCollection");
                 });
 
-            modelBuilder.Entity("Guides.Backend.Domain.LossToFollowUp", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<DateTime>("DateOfActualEntry")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeathReportedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ExtraInformation")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RARemarks")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ReasonForExit")
-                        .HasColumnType("int");
-
-                    b.Property<string>("RegisteredBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("RegisteredOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double?>("RegistrationLatitude")
-                        .HasColumnType("float");
-
-                    b.Property<double?>("RegistrationLongitude")
-                        .HasColumnType("float");
-
-                    b.Property<int>("RespondentId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RespondentId")
-                        .IsUnique();
-
-                    b.ToTable("LossToFollowUpCollection");
-                });
-
             modelBuilder.Entity("Guides.Backend.Domain.PhysicalActivity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
-
-                    b.Property<DateTime>("DateOfActualEntry")
-                        .HasColumnType("datetime2");
 
                     b.Property<int?>("ModerateActivityDaysPerWeek")
                         .HasColumnType("int");
@@ -253,9 +201,6 @@ namespace Guides.Backend.Migrations
 
                     b.Property<int>("BabySizeLargerThanAverage")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("DateOfActualEntry")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("DiabetesType")
                         .HasColumnType("int");
@@ -335,11 +280,11 @@ namespace Guides.Backend.Migrations
                     b.Property<string>("ANM")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("ANMTelephone1")
-                        .HasColumnType("bigint");
+                    b.Property<string>("ANMTelephone1")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("ANMTelephone2")
-                        .HasColumnType("bigint");
+                    b.Property<string>("ANMTelephone2")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AddressLine1")
                         .HasColumnType("nvarchar(max)");
@@ -350,20 +295,17 @@ namespace Guides.Backend.Migrations
                     b.Property<string>("Asha")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("AshaTelephone1")
-                        .HasColumnType("bigint");
+                    b.Property<string>("AshaTelephone1")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("AshaTelephone2")
-                        .HasColumnType("bigint");
+                    b.Property<string>("AshaTelephone2")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Country")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("DateOfActualEntry")
-                        .HasColumnType("datetime2");
 
                     b.Property<int?>("DeathRecordId")
                         .HasColumnType("int");
@@ -383,9 +325,6 @@ namespace Guides.Backend.Migrations
                     b.Property<string>("HusbandName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("LossToFollowUpId")
-                        .HasColumnType("int");
-
                     b.Property<int>("OwnAMobilePhone")
                         .HasColumnType("int");
 
@@ -404,14 +343,14 @@ namespace Guides.Backend.Migrations
                     b.Property<int?>("PhysicalActivityId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PostalCode")
-                        .HasColumnType("int");
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("PregnancyAndGdmRiskFactorsId")
                         .HasColumnType("int");
 
-                    b.Property<long?>("RCHID")
-                        .HasColumnType("bigint");
+                    b.Property<string>("RCHID")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RegisteredOn")
                         .HasColumnType("datetime2");
@@ -431,19 +370,22 @@ namespace Guides.Backend.Migrations
                     b.Property<int?>("SocioDemographicId")
                         .HasColumnType("int");
 
-                    b.Property<long?>("Telephone1")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Telephone1")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("Telephone2")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Telephone2")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("Telephone3")
-                        .HasColumnType("bigint");
+                    b.Property<string>("Telephone3")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("TobaccoAndAlcoholUseId")
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("VoluntaryExitId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -479,9 +421,6 @@ namespace Guides.Backend.Migrations
 
                     b.Property<int?>("Age")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("DateOfActualEntry")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DateOfBirth")
                         .HasColumnType("datetime2");
@@ -548,9 +487,6 @@ namespace Guides.Backend.Migrations
 
                     b.Property<int>("Alcohol")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("DateOfActualEntry")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("OtherTobaccoUse")
                         .HasColumnType("int");
@@ -682,6 +618,48 @@ namespace Guides.Backend.Migrations
                     b.ToTable("UserRoles");
                 });
 
+            modelBuilder.Entity("Guides.Backend.Domain.VoluntaryExit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("DeathReportedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExtraInformation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RARemarks")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ReasonForExit")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RegisteredBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RegisteredOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double?>("RegistrationLatitude")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("RegistrationLongitude")
+                        .HasColumnType("float");
+
+                    b.Property<int>("RespondentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RespondentId")
+                        .IsUnique();
+
+                    b.ToTable("VoluntaryExits");
+                });
+
             modelBuilder.Entity("Guides.Backend.Domain.DeathRecord", b =>
                 {
                     b.HasOne("Guides.Backend.Domain.Respondent", "Respondent")
@@ -698,17 +676,6 @@ namespace Guides.Backend.Migrations
                     b.HasOne("Guides.Backend.Domain.Respondent", "Respondent")
                         .WithOne("DietaryBehaviour")
                         .HasForeignKey("Guides.Backend.Domain.DietaryBehaviour", "RespondentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Respondent");
-                });
-
-            modelBuilder.Entity("Guides.Backend.Domain.LossToFollowUp", b =>
-                {
-                    b.HasOne("Guides.Backend.Domain.Respondent", "Respondent")
-                        .WithOne("LossToFollowUp")
-                        .HasForeignKey("Guides.Backend.Domain.LossToFollowUp", "RespondentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -789,13 +756,22 @@ namespace Guides.Backend.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Guides.Backend.Domain.VoluntaryExit", b =>
+                {
+                    b.HasOne("Guides.Backend.Domain.Respondent", "Respondent")
+                        .WithOne("VoluntaryExit")
+                        .HasForeignKey("Guides.Backend.Domain.VoluntaryExit", "RespondentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Respondent");
+                });
+
             modelBuilder.Entity("Guides.Backend.Domain.Respondent", b =>
                 {
                     b.Navigation("DeathRecord");
 
                     b.Navigation("DietaryBehaviour");
-
-                    b.Navigation("LossToFollowUp");
 
                     b.Navigation("PhysicalActivity");
 
@@ -804,6 +780,8 @@ namespace Guides.Backend.Migrations
                     b.Navigation("SocioDemographic");
 
                     b.Navigation("TobaccoAndAlcoholUse");
+
+                    b.Navigation("VoluntaryExit");
                 });
 
             modelBuilder.Entity("Guides.Backend.Domain.Role", b =>

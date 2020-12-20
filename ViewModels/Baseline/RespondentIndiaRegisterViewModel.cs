@@ -19,45 +19,36 @@ namespace Guides.Backend.ViewModels.Baseline
         public string AddressLine2 { get; set; }
         [MaxLength(50)]
         public string City { get; set; }
-        [MaxLength(10)]
-        public string PostalCode { get; set; }
-        [MaxLength(11), Required]
-        public string Telephone1 { get; set; }
+        public int? PostalCode { get; set; }
+        public long? Telephone1 { get; set; }
         [MaxLength(50), Required]
         public string Person1 { get; set; }
-        [MaxLength(11)]
-        public string Telephone2 { get; set; }
+        public long? Telephone2 { get; set; }
         [MaxLength(50)]
         public string Person2 { get; set; }
         public MobilePhone OwnAMobilePhone { get; set; }
         public MobilePhone SecondaryAccessToMobilePhone { get; set; }
         public ConditionalBoolean SecondaryAccessToSmartphone { get; set; }
     }
-    
+
     public abstract class RespondentIndiaViewModelBase : RespondentViewModelBase
     {
-        [MaxLength(11)]
-        public string Telephone3 { get; set; }
+        public long? Telephone3 { get; set; }
         [MaxLength(50)]
         public string Person3 { get; set; }
-        [MaxLength(12)]
-        public string RCHID { get; set; }
+        public long? RCHID { get; set; }
         [MaxLength(50), Required]
         public string PHC { get; set; }
         [MaxLength(50), Required]
         public string ANM { get; set; }
-        [MaxLength(11)]
-        public string ANMTelephone1 { get; set; }
-        [MaxLength(11)]
-        public string ANMTelephone2 { get; set; }
+        public long? ANMTelephone1 { get; set; }
+        public long? ANMTelephone2 { get; set; }
         [MaxLength(50), Required]
         public string Asha { get; set; }
-        [MaxLength(11)]
-        public string AshaTelephone1 { get; set; }
-        [MaxLength(11)]
-        public string AshaTelephone2 { get; set; }
+        public long? AshaTelephone1 { get; set; }
+        public long? AshaTelephone2 { get; set; }
     }
-    
+
     public class RespondentUgandaViewModelBase : RespondentViewModelBase
     {
         [MaxLength(15)]
@@ -65,10 +56,12 @@ namespace Guides.Backend.ViewModels.Baseline
         [MaxLength(50), Required]
         public string HealthFacility { get; set; }
     }
-    
-    public class RespondentRegisterIndiaViewModel : RespondentIndiaViewModelBase
+
+    public class RespondentIndiaRegisterViewModel : RespondentIndiaViewModelBase
     {
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime RegisteredOn { get; set; }
         [Range(-90, 90)]
         public double? RegistrationLatitude { get; set; }
@@ -77,10 +70,12 @@ namespace Guides.Backend.ViewModels.Baseline
         [MaxLength(100), Required]
         public string RegisteredBy { get; set; }
     }
-    
-    public class RespondentRegisterUgandaViewModel : RespondentUgandaViewModelBase
+
+    public class RespondentUgandaRegisterViewModel : RespondentUgandaViewModelBase
     {
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime RegisteredOn { get; set; }
         [Range(-90, 90)]
         public double? RegistrationLatitude { get; set; }
@@ -89,22 +84,35 @@ namespace Guides.Backend.ViewModels.Baseline
         [MaxLength(100), Required]
         public string RegisteredBy { get; set; }
     }
-    
-    public class RespondentUpdateIndiaViewModel : RespondentIndiaViewModelBase
+
+    public class RespondentIndiaUpdateViewModel : RespondentIndiaViewModelBase
     {
         [Required, Range(0, 1_000_000)]
         public int Id { get; set; }
     }
-    
-    public class RespondentUpdateUgandaViewModel : RespondentUgandaViewModelBase
+
+    public class RespondentUgandaUpdateViewModel : RespondentUgandaViewModelBase
     {
         [Required, Range(0, 1_000_000)]
+        public int Id { get; set; }
+    }
+
+
+    public class RespondentIndiaListViewModel : RespondentIndiaRegisterViewModel
+    {
+        public int Id { get; set; }
+    }
+
+    public class RespondentUgandaListViewModel : RespondentUgandaRegisterViewModel
+    {
         public int Id { get; set; }
     }
 
     public abstract class SocioDemographicViewModel
     {
         //  Domain
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? DateOfBirth { get; set; }
         [Range(18, 50)]
         public int? Age { get; set; }
@@ -141,7 +149,7 @@ namespace Guides.Backend.ViewModels.Baseline
         [Required, Range(1, 1_000_000)]
         public int RespondentId { get; set; }
     }
-    
+
     public class SocioDemographicUgandaRegisterViewModel : SocioDemographicViewModel
     {
         //  Metadata
@@ -153,20 +161,28 @@ namespace Guides.Backend.ViewModels.Baseline
         public string RegisteredBy { get; set; }
         public double? RegistrationLatitude { get; set; }
         public double? RegistrationLongitude { get; set; }
-        
+
         //  Domain
         public UgandaTribe UgandaTribe { get; set; }
     }
-    
-    
+
+
     public class SocioDemographicUgandaUpdateViewModel : SocioDemographicViewModel
     {
         //  Metadata
         [Required, Range(1, 1_000_000)]
         public int RespondentId { get; set; }
-        
+
         //  Domain
         public UgandaTribe UgandaTribe { get; set; }
+    }
+
+    public class SocioDemographicIndiaListViewModel : SocioDemographicIndiaUpdateViewModel
+    {
+    }
+
+    public class SocioDemographicUgandaListViewModel : SocioDemographicUgandaUpdateViewModel
+    {
     }
 
     public abstract class PregnancyAndGdmRiskFactorsViewModel
@@ -181,7 +197,11 @@ namespace Guides.Backend.ViewModels.Baseline
         public GeneralTriplet BabySizeLargerThanAverage { get; set; }
         [Range(0, 240)]
         public int? MonthsFromLastDelivery { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? LMP { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? EDD { get; set; }
         [Range(0, 8)]
         public int? FirstAncVisitMonth { get; set; }
@@ -207,12 +227,16 @@ namespace Guides.Backend.ViewModels.Baseline
         public double? RegistrationLatitude { get; set; }
         public double? RegistrationLongitude { get; set; }
     }
-    
+
     public class PregnancyAndGdmRiskFactorsUpdateViewModel : PregnancyAndGdmRiskFactorsViewModel
     {
         //  Metadata
         [Required, Range(1, 1_000_000)]
         public int RespondentId { get; set; }
+    }
+
+    public class PregnancyAndGdmRiskFactorsListViewModel : PregnancyAndGdmRiskFactorsUpdateViewModel
+    {
     }
 
     public abstract class ToboccoAndAlcoholUseViewModel
@@ -222,8 +246,6 @@ namespace Guides.Backend.ViewModels.Baseline
         public TobaccoAndAlcoholConsumption OtherTobaccoUse { get; set; }
         public TobaccoAndAlcoholConsumption Alcohol { get; set; }
     }
-    
-    
 
     public class ToboccoAndAlcoholUseRegisterViewModel : ToboccoAndAlcoholUseViewModel
     {
@@ -236,14 +258,18 @@ namespace Guides.Backend.ViewModels.Baseline
         public string RegisteredBy { get; set; }
         public double? RegistrationLatitude { get; set; }
         public double? RegistrationLongitude { get; set; }
-        
+
     }
-    
+
     public class ToboccoAndAlcoholUseUpdateViewModel : ToboccoAndAlcoholUseViewModel
     {
         //  Metadata
         [Required, Range(1, 1_000_000)]
         public int RespondentId { get; set; }
+    }
+
+    public class ToboccoAndAlcoholUseListViewModel : ToboccoAndAlcoholUseUpdateViewModel
+    {
     }
 
     public abstract class PhysicalActivityViewModel
@@ -255,21 +281,21 @@ namespace Guides.Backend.ViewModels.Baseline
         public int? VigorousActivityHoursPerDay { get; set; }
         [Range(0, 59)]
         public int? VigorousActivityMinutesPerDay { get; set; }
-        
+
         [Range(0, 7)]
         public int? ModerateActivityDaysPerWeek { get; set; }
         [Range(0, 12)]
         public int? ModerateActivityHoursPerDay { get; set; }
         [Range(0, 59)]
         public int? ModerateActivityMinutesPerDay { get; set; }
-        
+
         [Range(0, 7)]
         public int? WalkingDaysPerWeek { get; set; }
         [Range(0, 12)]
         public int? WalkingHoursPerDay { get; set; }
         [Range(0, 59)]
         public int? WalkingMinutesPerDay { get; set; }
-        
+
         [Range(0, 7)]
         public int? SittingDaysPerWeek { get; set; }
         [Range(0, 12)]
@@ -277,8 +303,6 @@ namespace Guides.Backend.ViewModels.Baseline
         [Range(0, 59)]
         public int? SittingMinutesPerDay { get; set; }
     }
-    
-    
 
     public class PhysicalActivityRegisterViewModel : PhysicalActivityViewModel
     {
@@ -292,12 +316,16 @@ namespace Guides.Backend.ViewModels.Baseline
         public double? RegistrationLatitude { get; set; }
         public double? RegistrationLongitude { get; set; }
     }
-    
+
     public class PhysicalActivityUpdateViewModel : PhysicalActivityViewModel
     {
         //  Metadata
         [Required, Range(1, 1_000_000)]
         public int RespondentId { get; set; }
+    }
+
+    public class PhysicalActivityListViewModel : PhysicalActivityUpdateViewModel
+    {
     }
 
     public abstract class DietaryBehaviourViewModel
@@ -329,11 +357,15 @@ namespace Guides.Backend.ViewModels.Baseline
         public double? RegistrationLatitude { get; set; }
         public double? RegistrationLongitude { get; set; }
     }
-    
+
     public class DietaryBehaviourUpdateViewModel : DietaryBehaviourViewModel
     {
         //  Metadata
         [Required, Range(1, 1_000_000)]
         public int RespondentId { get; set; }
+    }
+
+    public class DietaryBehaviourListViewModel : DietaryBehaviourUpdateViewModel
+    {
     }
 }

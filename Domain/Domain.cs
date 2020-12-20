@@ -39,10 +39,10 @@ namespace Guides.Backend.Domain
         public int FailedAttempts { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
-        public ICollection<UserRole> UserRoles { get; set; }
+        public virtual ICollection<UserRole> UserRoles { get; set; }
         
         //  Domain
-        public ICollection<Respondent> Respondents { get; set; }
+        public virtual ICollection<Respondent> Respondents { get; set; }
 
         public User()
         {
@@ -56,7 +56,7 @@ namespace Guides.Backend.Domain
         public int Id { get; set; }
         [MaxLength(50), Required]
         public string Name { get; set; }
-        public ICollection<UserRole> UserRoles { get; set; }
+        public virtual ICollection<UserRole> UserRoles { get; set; }
 
         public Role()
         {
@@ -67,9 +67,9 @@ namespace Guides.Backend.Domain
     public class UserRole
     {
         public int UserId { get; set; }
-        public User User { get; set; }
+        public virtual User User { get; set; }
         public int RoleId { get; set; }
-        public Role Role { get; set; }
+        public virtual Role Role { get; set; }
     }
 
 
@@ -77,28 +77,29 @@ namespace Guides.Backend.Domain
     {
         public int Id { get; set; }
         public DateTime RegisteredOn { get; set; }
+        public DateTime DateOfActualEntry { get; set; }
         public string FullName { get; set; }
         public string HusbandName { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string City { get; set; }
-        public string PostalCode { get; set; }
-        public string Telephone1 { get; set; }
+        public int? PostalCode { get; set; }
+        public long? Telephone1 { get; set; }
         public string Person1 { get; set; }
-        public string Telephone2 { get; set; }
+        public long? Telephone2 { get; set; }
         public string Person2 { get; set; }
-        public string Telephone3 { get; set; }
+        public long? Telephone3 { get; set; }
         public string Person3 { get; set; }
-        public string RCHID { get; set; }
+        public long? RCHID { get; set; }
         public string HospitalId { get; set; }
         public string PHC { get; set; }
         public string HealthFacility { get; set; }
         public string ANM { get; set; }
-        public string ANMTelephone1 { get; set; }
-        public string ANMTelephone2 { get; set; }
+        public long? ANMTelephone1 { get; set; }
+        public long? ANMTelephone2 { get; set; }
         public string Asha { get; set; }
-        public string AshaTelephone1 { get; set; }
-        public string AshaTelephone2 { get; set; }
+        public long? AshaTelephone1 { get; set; }
+        public long? AshaTelephone2 { get; set; }
         public MobilePhone OwnAMobilePhone { get; set; }
         public MobilePhone SecondaryAccessToMobilePhone { get; set; }
         public ConditionalBoolean SecondaryAccessToSmartphone { get; set; }
@@ -106,30 +107,37 @@ namespace Guides.Backend.Domain
         public double? RegistrationLatitude { get; set; }
         public double? RegistrationLongitude { get; set; }
 
-        public User User { get; set; }
+        public virtual User User { get; set; }
         public int UserId { get; set; }
 
-        public SocioDemographic SocioDemographic { get; set; }
+        public virtual SocioDemographic SocioDemographic { get; set; }
         public int? SocioDemographicId { get; set; }
 
-        public PregnancyAndGdmRiskFactors PregnancyAndGdmRiskFactors { get; set; }
+        public virtual PregnancyAndGdmRiskFactors PregnancyAndGdmRiskFactors { get; set; }
         public int? PregnancyAndGdmRiskFactorsId { get; set; }
 
-        public TobaccoAndAlcoholUse TobaccoAndAlcoholUse { get; set; }
+        public virtual TobaccoAndAlcoholUse TobaccoAndAlcoholUse { get; set; }
         public int? TobaccoAndAlcoholUseId { get; set; }
 
-        public PhysicalActivity PhysicalActivity { get; set; }
+        public virtual PhysicalActivity PhysicalActivity { get; set; }
         public int? PhysicalActivityId { get; set; }
 
-        public DietaryBehaviour DietaryBehaviour { get; set; }
+        public virtual DietaryBehaviour DietaryBehaviour { get; set; }
         public int? DietaryBehaviourId { get; set; }
+
+        public virtual DeathRecord DeathRecord { get; set; }
+        public int? DeathRecordId { get; set; }
+
+        public virtual LossToFollowUp LossToFollowUp { get; set; }
+        public int? LossToFollowUpId { get; set; }
     }
 
     public class SocioDemographic
     {
         public int Id { get; set; }
         public DateTime RegisteredOn { get; set; }
-        public Respondent Respondent { get; set; }
+        public DateTime DateOfActualEntry { get; set; }
+        public virtual Respondent Respondent { get; set; }
         public int RespondentId { get; set; }
         public string RegisteredBy { get; set; }
         public double? RegistrationLatitude { get; set; }
@@ -155,7 +163,8 @@ namespace Guides.Backend.Domain
     {
         public int Id { get; set; }
         public DateTime RegisteredOn { get; set; }
-        public Respondent Respondent { get; set; }
+        public DateTime DateOfActualEntry { get; set; }
+        public virtual Respondent Respondent { get; set; }
         public int RespondentId { get; set; }
         public string RegisteredBy { get; set; }
         public double? RegistrationLatitude { get; set; }
@@ -185,7 +194,8 @@ namespace Guides.Backend.Domain
     {
         public int Id { get; set; }
         public DateTime RegisteredOn { get; set; }
-        public Respondent Respondent { get; set; }
+        public DateTime DateOfActualEntry { get; set; }
+        public virtual Respondent Respondent { get; set; }
         public int RespondentId { get; set; }
         public string RegisteredBy { get; set; }
         public double? RegistrationLatitude { get; set; }
@@ -202,7 +212,8 @@ namespace Guides.Backend.Domain
     {
         public int Id { get; set; }
         public DateTime RegisteredOn { get; set; }
-        public Respondent Respondent { get; set; }
+        public DateTime DateOfActualEntry { get; set; }
+        public virtual Respondent Respondent { get; set; }
         public int RespondentId { get; set; }
         public string RegisteredBy { get; set; }
         public double? RegistrationLatitude { get; set; }
@@ -231,7 +242,8 @@ namespace Guides.Backend.Domain
     {
         public int Id { get; set; }
         public DateTime RegisteredOn { get; set; }
-        public Respondent Respondent { get; set; }
+        public DateTime DateOfActualEntry { get; set; }
+        public virtual Respondent Respondent { get; set; }
         public int RespondentId { get; set; }
         public string RegisteredBy { get; set; }
         public double? RegistrationLatitude { get; set; }
@@ -250,5 +262,43 @@ namespace Guides.Backend.Domain
         public DietaryBehaviourSelectionB RedMeat { get; set; }
         public DietaryBehaviourSelectionB Snack { get; set; }
         public DietaryBehaviourSelectionA OutsideMeals { get; set; }
+    }
+
+
+    public class DeathRecord
+    {
+        //  Metadata
+        public int Id { get; set; }
+        public DateTime RegisteredOn { get; set; }
+        public DateTime DateOfActualEntry { get; set; }
+        public virtual Respondent Respondent { get; set; }
+        public int RespondentId { get; set; }
+        public string RegisteredBy { get; set; }
+        public double? RegistrationLatitude { get; set; }
+        public double? RegistrationLongitude { get; set; }
+        
+        //  Domain
+        public string ReasonForDeath { get; set; }
+        public DateTime? DateOfDeath { get; set; }
+        public string DeathReportedBy { get; set; }
+    }
+    
+    public class LossToFollowUp
+    {
+        //  Metadata
+        public int Id { get; set; }
+        public DateTime RegisteredOn { get; set; }
+        public DateTime DateOfActualEntry { get; set; }
+        public virtual Respondent Respondent { get; set; }
+        public int RespondentId { get; set; }
+        public string RegisteredBy { get; set; }
+        public double? RegistrationLatitude { get; set; }
+        public double? RegistrationLongitude { get; set; }
+        
+        //  Domain
+        public VoluntaryExitReason ReasonForExit { get; set; }
+        public string ExtraInformation { get; set; }
+        public string RARemarks { get; set; }
+        public string DeathReportedBy { get; set; }
     }
 }
