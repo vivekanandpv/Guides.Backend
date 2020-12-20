@@ -168,10 +168,10 @@ namespace Guides.Backend.Domain
         public int? Living { get; set; }
         public GeneralTriplet PreviousBabyWeightOver4kg { get; set; }
         public GeneralTriplet BabySizeLargerThanAverage { get; set; }
-        public int MonthsFromLastDelivery { get; set; }
+        public int? MonthsFromLastDelivery { get; set; }
         public DateTime? LMP { get; set; }
         public DateTime? EDD { get; set; }
-        public int FirstAncVisitMonth { get; set; }
+        public int? FirstAncVisitMonth { get; set; }
         public GeneralTriplet WeightMeasuredInCurrentPregnancy { get; set; }
         public double? Weight { get; set; }
         public GeneralTriplet HtnOrPreEclampsia { get; set; }

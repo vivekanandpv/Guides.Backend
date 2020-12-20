@@ -4,14 +4,16 @@ using Guides.Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Guides.Backend.Migrations
 {
     [DbContext(typeof(GuidesContext))]
-    partial class GuidesContextModelSnapshot : ModelSnapshot
+    [Migration("20201220093432_ChangedMonthsFromLastDelivery")]
+    partial class ChangedMonthsFromLastDelivery
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -173,7 +175,7 @@ namespace Guides.Backend.Migrations
                     b.Property<DateTime?>("EDD")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("FirstAncVisitMonth")
+                    b.Property<int>("FirstAncVisitMonth")
                         .HasColumnType("int");
 
                     b.Property<int>("Gdm")
