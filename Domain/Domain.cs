@@ -40,10 +40,14 @@ namespace Guides.Backend.Domain
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public ICollection<UserRole> UserRoles { get; set; }
+        
+        //  Domain
+        public ICollection<Respondent> Respondents { get; set; }
 
         public User()
         {
             this.UserRoles = new HashSet<UserRole>();
+            this.Respondents = new List<Respondent>();
         }
     }
 
@@ -98,6 +102,9 @@ namespace Guides.Backend.Domain
         public MobilePhone OwnAMobilePhone { get; set; }
         public MobilePhone SecondaryAccessToMobilePhone { get; set; }
         public ConditionalBoolean SecondaryAccessToSmartphone { get; set; }
+        public Country Country { get; set; }
+        public double? RegistrationLatitude { get; set; }
+        public double? RegistrationLongitude { get; set; }
 
         public User User { get; set; }
         public int UserId { get; set; }
@@ -124,8 +131,9 @@ namespace Guides.Backend.Domain
         public DateTime RegisteredOn { get; set; }
         public Respondent Respondent { get; set; }
         public int RespondentId { get; set; }
-        public User User { get; set; }
-        public int UserId { get; set; }
+        public string RegisteredBy { get; set; }
+        public double? RegistrationLatitude { get; set; }
+        public double? RegistrationLongitude { get; set; }
         
         //  Domain
         public DateTime? DateOfBirth { get; set; }
@@ -149,8 +157,9 @@ namespace Guides.Backend.Domain
         public DateTime RegisteredOn { get; set; }
         public Respondent Respondent { get; set; }
         public int RespondentId { get; set; }
-        public User User { get; set; }
-        public int UserId { get; set; }
+        public string RegisteredBy { get; set; }
+        public double? RegistrationLatitude { get; set; }
+        public double? RegistrationLongitude { get; set; }
         
         //  Domain
 
@@ -178,8 +187,9 @@ namespace Guides.Backend.Domain
         public DateTime RegisteredOn { get; set; }
         public Respondent Respondent { get; set; }
         public int RespondentId { get; set; }
-        public User User { get; set; }
-        public int UserId { get; set; }
+        public string RegisteredBy { get; set; }
+        public double? RegistrationLatitude { get; set; }
+        public double? RegistrationLongitude { get; set; }
         
         //  Domain
         public bool TobaccoUsed { get; set; }
@@ -194,8 +204,9 @@ namespace Guides.Backend.Domain
         public DateTime RegisteredOn { get; set; }
         public Respondent Respondent { get; set; }
         public int RespondentId { get; set; }
-        public User User { get; set; }
-        public int UserId { get; set; }
+        public string RegisteredBy { get; set; }
+        public double? RegistrationLatitude { get; set; }
+        public double? RegistrationLongitude { get; set; }
         
         //  Domain
         public int? VigorousActivityDaysPerWeek { get; set; }
@@ -222,8 +233,9 @@ namespace Guides.Backend.Domain
         public DateTime RegisteredOn { get; set; }
         public Respondent Respondent { get; set; }
         public int RespondentId { get; set; }
-        public User User { get; set; }
-        public int UserId { get; set; }
+        public string RegisteredBy { get; set; }
+        public double? RegistrationLatitude { get; set; }
+        public double? RegistrationLongitude { get; set; }
         
         //  Domain
         public DietaryBehaviourSelectionA Breakfast { get; set; }

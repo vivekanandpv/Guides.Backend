@@ -14,7 +14,7 @@ namespace Guides.Backend.Services.Auth
     {
         private readonly AuthRegionViewModel _region;
         
-        public MasterAuthService(IAuthRepository repository, ILoggerFactory loggerFactory, IMapper mapper, AuthRegionViewModel region) : base(repository, loggerFactory, mapper)
+        public MasterAuthService(IAuthRepository repository, ILoggerFactory loggerFactory, IMapper mapper) : base(repository, loggerFactory, mapper)
         {
             this._region = new AuthRegionViewModel
             {

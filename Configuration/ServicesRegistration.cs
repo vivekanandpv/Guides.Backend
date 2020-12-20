@@ -160,6 +160,7 @@ namespace Guides.Backend.Configuration
         {
             services.AddScoped<IAuthService, IndiaAuthService>();
             services.AddScoped<IAuthService, UgandaAuthService>();
+            services.AddScoped<IAuthService, MasterAuthService>();
 
             services.AddScoped<IAuthServiceFactory, AuthServiceFactory>();
 

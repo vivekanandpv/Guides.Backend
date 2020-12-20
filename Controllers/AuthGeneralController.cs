@@ -43,7 +43,7 @@ namespace Guides.Backend.Controllers
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
+        //[Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.Register)]
         public async Task<ActionResult<AuthResetKeyViewModel>> Register(AuthRegisterViewModel viewModel)
         {
