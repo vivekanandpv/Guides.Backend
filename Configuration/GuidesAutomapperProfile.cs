@@ -52,9 +52,9 @@ namespace Guides.Backend.Configuration
             CreateMap<PregnancyAndGdmRiskFactorsRegisterViewModel, PregnancyAndGdmRiskFactors>();
             CreateMap<PregnancyAndGdmRiskFactorsUpdateViewModel, PregnancyAndGdmRiskFactors>();
             
-            CreateMap<TobaccoAndAlcoholUse, ToboccoAndAlcoholUseListViewModel>();
-            CreateMap<ToboccoAndAlcoholUseRegisterViewModel, TobaccoAndAlcoholUse>();
-            CreateMap<ToboccoAndAlcoholUseUpdateViewModel, TobaccoAndAlcoholUse>();
+            CreateMap<TobaccoAndAlcoholUse, TobaccoAndAlcoholUseListViewModel>();
+            CreateMap<TobaccoAndAlcoholUseRegisterViewModel, TobaccoAndAlcoholUse>();
+            CreateMap<TobaccoAndAlcoholUseUpdateViewModel, TobaccoAndAlcoholUse>();
             
             CreateMap<PhysicalActivity, PhysicalActivityListViewModel>();
             CreateMap<PhysicalActivityRegisterViewModel, PhysicalActivity>();
@@ -63,6 +63,14 @@ namespace Guides.Backend.Configuration
             CreateMap<DietaryBehaviour, DietaryBehaviourListViewModel>();
             CreateMap<DietaryBehaviourRegisterViewModel, DietaryBehaviour>();
             CreateMap<DietaryBehaviourUpdateViewModel, DietaryBehaviour>();
+            
+            CreateMap<DeathRecord, DeathRecordListViewModel>();
+            CreateMap<DeathRecordRegisterViewModel, DeathRecord>();
+            CreateMap<DeathRecordUpdateViewModel, DeathRecord>();
+            
+            CreateMap<LossToFollowUp, LossToFollowUpListViewModel>();
+            CreateMap<LossToFollowUpRegisterViewModel, LossToFollowUp>();
+            CreateMap<LossToFollowUpUpdateViewModel, LossToFollowUp>();
         }
     }
 }

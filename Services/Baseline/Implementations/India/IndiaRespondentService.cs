@@ -9,21 +9,22 @@ using Guides.Backend.Exceptions.Domain;
 using Guides.Backend.Repositories.Auth;
 using Guides.Backend.Repositories.Baseline.Interfaces;
 using Guides.Backend.Services.Baseline.Interfaces;
+using Guides.Backend.Services.Baseline.Interfaces.India;
 using Guides.Backend.StaticProviders;
 using Guides.Backend.ViewModels.Baseline;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Guides.Backend.Services.Baseline.Implementations
+namespace Guides.Backend.Services.Baseline.Implementations.India
 {
-    public class UgandaRespondentService : IUgandaRespondentService
+    public class IndiaRespondentService : IIndiaRespondentService
     {
         private readonly IRespondentRepository _repository;
         private readonly IAuthRepository _authRepository;
         private readonly IMapper _mapper;
         private readonly ILogger _logger;
 
-        public UgandaRespondentService(
+        public IndiaRespondentService(
             IRespondentRepository repository, 
             IAuthRepository authRepository, 
             IMapper mapper,
@@ -34,32 +35,32 @@ namespace Guides.Backend.Services.Baseline.Implementations
             _mapper = mapper;
             _logger = loggerFactory.CreateLogger(GeneralStaticDataProvider.RespondentCategory);
         }
-        public async Task<IEnumerable<RespondentUgandaListViewModel>> Get()
+        public async Task<IEnumerable<RespondentIndiaListViewModel>> Get()
         {
             return await this._repository
                 .Get()
                 .Include(r => r.User)
-                .Where(r => r.Country == Country.Uganda)
+                .Where(r => r.Country == Country.India)
                 .Select(
-                    r => this._mapper.Map<Respondent, RespondentUgandaListViewModel>(r)
+                    r => this._mapper.Map<Respondent, RespondentIndiaListViewModel>(r)
                 ).ToListAsync();
         }
 
-        public async Task<RespondentUgandaListViewModel> Get(int id)
+        public async Task<RespondentIndiaListViewModel> Get(int id)
         {
             var respondent = await this._repository
                 .Get(id);
 
-            if (respondent.Country != Country.Uganda)
+            if (respondent.Country != Country.India)
             {
                 this._logger.LogInformation($"Cross region access to respondent id: {id} is blocked");
                 throw new UserActionNotSupportedException();
             }
                 
-            return this._mapper.Map<Respondent, RespondentUgandaListViewModel>(respondent);
+            return this._mapper.Map<Respondent, RespondentIndiaListViewModel>(respondent);
         }
 
-        public async Task<RespondentUgandaListViewModel> Register(RespondentUgandaRegisterViewModel viewModel, string initiatedBy)
+        public async Task<RespondentIndiaListViewModel> Register(RespondentIndiaRegisterViewModel viewModel, string initiatedBy)
         {
             if (viewModel.RegisteredBy != initiatedBy)
             {
@@ -68,8 +69,8 @@ namespace Guides.Backend.Services.Baseline.Implementations
             }
             
             this._logger.LogInformation($"Respondent registration of {viewModel.FullName} is initiated");
-            var respondent = this._mapper.Map<RespondentUgandaRegisterViewModel, Respondent>(viewModel);
-            respondent.Country = Country.Uganda;
+            var respondent = this._mapper.Map<RespondentIndiaRegisterViewModel, Respondent>(viewModel);
+            respondent.Country = Country.India;
             respondent.User = await this._authRepository.GetUserByEmail(viewModel.RegisteredBy);
             respondent.DateOfActualEntry = DateTime.UtcNow;
 
@@ -77,10 +78,10 @@ namespace Guides.Backend.Services.Baseline.Implementations
             await this._repository.Add(respondent);
             this._logger.LogInformation($"Respondent registration of {viewModel.FullName} succeeded. Id: {respondent.Id}");
 
-            return this._mapper.Map<Respondent, RespondentUgandaListViewModel>(respondent);
+            return this._mapper.Map<Respondent, RespondentIndiaListViewModel>(respondent);
         }
 
-        public async Task<RespondentUgandaListViewModel> Update(int id, RespondentUgandaUpdateViewModel viewModel, string initiatedBy)
+        public async Task<RespondentIndiaListViewModel> Update(int id, RespondentIndiaUpdateViewModel viewModel, string initiatedBy)
         {
             if (viewModel.Id != id)
             {
@@ -102,7 +103,7 @@ namespace Guides.Backend.Services.Baseline.Implementations
 
             var createdBy = respondentDb.User.Email;
 
-            var roleIntersection = roles.Intersect(GeneralStaticDataProvider.UgandaAdministratorGroup);
+            var roleIntersection = roles.Intersect(GeneralStaticDataProvider.IndiaAdministratorGroup);
             
             if (respondentDb.User.Email == initiatedBy || roleIntersection.Any())
             {
@@ -111,7 +112,7 @@ namespace Guides.Backend.Services.Baseline.Implementations
                 await this._repository.Save(respondentDb);
                 
                 this._logger.LogInformation($"Respondent data update completed for id: {id} by {initiatedBy}");
-                return this._mapper.Map<Respondent, RespondentUgandaListViewModel>(respondentDb);
+                return this._mapper.Map<Respondent, RespondentIndiaListViewModel>(respondentDb);
             }
             
             throw new UserActionPreventedException();

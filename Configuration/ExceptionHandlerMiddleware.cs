@@ -13,7 +13,8 @@ namespace Guides.Backend.Configuration
         {
             return app
                 .UseAuthExceptionHandler()
-                .UseConfigurationExceptionHandler();
+                .UseConfigurationExceptionHandler()
+                .UseDomainExceptionHandler();
         }
 
         private static IApplicationBuilder UseAuthExceptionHandler(this IApplicationBuilder app)
@@ -24,6 +25,11 @@ namespace Guides.Backend.Configuration
         private static IApplicationBuilder UseConfigurationExceptionHandler(this IApplicationBuilder app)
         {
             return app.UseMiddleware<ConfigurationExceptionHandlerMiddleware>();
+        }
+        
+        private static IApplicationBuilder UseDomainExceptionHandler(this IApplicationBuilder app)
+        {
+            return app.UseMiddleware<DomainExceptionHandlerMiddleware>();
         }
     }
 }
