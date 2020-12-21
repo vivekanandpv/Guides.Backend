@@ -239,7 +239,7 @@ namespace Guides.Backend.ViewModels.Baseline
     {
     }
 
-    public abstract class ToboccoAndAlcoholUseViewModel
+    public abstract class TobaccoAndAlcoholUseViewModel
     {
         public bool TobaccoUsed { get; set; }
         public TobaccoAndAlcoholConsumption Smoking { get; set; }
@@ -247,7 +247,7 @@ namespace Guides.Backend.ViewModels.Baseline
         public TobaccoAndAlcoholConsumption Alcohol { get; set; }
     }
 
-    public class ToboccoAndAlcoholUseRegisterViewModel : ToboccoAndAlcoholUseViewModel
+    public class TobaccoAndAlcoholUseRegisterViewModel : TobaccoAndAlcoholUseViewModel
     {
         //  Metadata
         [Required]
@@ -261,14 +261,14 @@ namespace Guides.Backend.ViewModels.Baseline
 
     }
 
-    public class ToboccoAndAlcoholUseUpdateViewModel : ToboccoAndAlcoholUseViewModel
+    public class TobaccoAndAlcoholUseUpdateViewModel : TobaccoAndAlcoholUseViewModel
     {
         //  Metadata
         [Required, Range(1, 1_000_000)]
         public int RespondentId { get; set; }
     }
 
-    public class ToboccoAndAlcoholUseListViewModel : ToboccoAndAlcoholUseUpdateViewModel
+    public class TobaccoAndAlcoholUseListViewModel : TobaccoAndAlcoholUseUpdateViewModel
     {
     }
 
@@ -366,6 +366,75 @@ namespace Guides.Backend.ViewModels.Baseline
     }
 
     public class DietaryBehaviourListViewModel : DietaryBehaviourUpdateViewModel
+    {
+    }
+    
+    
+    public abstract class DeathRecordViewModel
+    {
+        //  Domain
+        [Required]
+        public string ReasonForDeath { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime? DateOfDeath { get; set; }
+        public string DeathReportedBy { get; set; }
+    }
+    
+    public class DeathRecordRegisterViewModel : DeathRecordViewModel
+    {
+        //  Metadata
+        [Required]
+        public DateTime RegisteredOn { get; set; }
+        [Required, Range(1, 1_000_000)]
+        public int RespondentId { get; set; }
+        [Required, MaxLength(100)]
+        public string RegisteredBy { get; set; }
+        public double? RegistrationLatitude { get; set; }
+        public double? RegistrationLongitude { get; set; }
+    }
+    
+    public class DeathRecordUpdateViewModel : DeathRecordViewModel
+    {
+        //  Metadata
+        [Required, Range(1, 1_000_000)]
+        public int RespondentId { get; set; }
+    }
+    
+    public class DeathRecordListViewModel : DeathRecordUpdateViewModel
+    {
+    }
+    
+    
+    
+    public abstract class LossToFollowUpViewModel
+    {
+        //  Domain
+        public VoluntaryExitReason ReasonForExit { get; set; }
+        public string ExtraInformation { get; set; }
+        public string RARemarks { get; set; }
+    }
+    
+    public class LossToFollowUpRegisterViewModel : LossToFollowUpViewModel
+    {
+        //  Metadata
+        [Required]
+        public DateTime RegisteredOn { get; set; }
+        [Required, Range(1, 1_000_000)]
+        public int RespondentId { get; set; }
+        [Required, MaxLength(100)]
+        public string RegisteredBy { get; set; }
+        public double? RegistrationLatitude { get; set; }
+        public double? RegistrationLongitude { get; set; }
+    }
+    
+    public class LossToFollowUpUpdateViewModel : LossToFollowUpViewModel
+    {
+        //  Metadata
+        [Required, Range(1, 1_000_000)]
+        public int RespondentId { get; set; }
+    }
+    
+    public class LossToFollowUpListViewModel : LossToFollowUpUpdateViewModel
     {
     }
 }

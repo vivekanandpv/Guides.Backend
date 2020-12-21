@@ -299,6 +299,5 @@ namespace Guides.Backend.Domain
         public VoluntaryExitReason ReasonForExit { get; set; }
         public string ExtraInformation { get; set; }
         public string RARemarks { get; set; }
-        public string DeathReportedBy { get; set; }
     }
 }

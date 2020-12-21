@@ -78,6 +78,8 @@ namespace Guides.Backend.StaticProviders
         public const string TobaccoAndAlcoholUseCategory = "TobaccoAndAlcoholUse Service";
         public const string PhysicalActivityCategory = "PhysicalActivity Service";
         public const string DietaryBehaviourCategory = "DietaryBehaviour Service";
+        public const string DeathRecordCategory = "DeathRecord Service";
+        public const string LossToFollowUpCategory = "LossToFollowUp Service";
 
         //  Messages
         public const string PasswordPolicyErrorMessage =

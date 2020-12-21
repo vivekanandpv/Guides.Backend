@@ -9,6 +9,10 @@ using Guides.Backend.Repositories.Auth;
 using Guides.Backend.Repositories.Baseline.Implementations;
 using Guides.Backend.Repositories.Baseline.Interfaces;
 using Guides.Backend.Services.Auth;
+using Guides.Backend.Services.Baseline.Implementations.India;
+using Guides.Backend.Services.Baseline.Implementations.Uganda;
+using Guides.Backend.Services.Baseline.Interfaces.India;
+using Guides.Backend.Services.Baseline.Interfaces.Uganda;
 using Guides.Backend.StaticProviders;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -168,17 +172,38 @@ namespace Guides.Backend.Configuration
             services.TryAddScoped<ITobaccoAndAlcoholUseRepository, TobaccoAndAlcoholUseRepository>();
             services.TryAddScoped<IPhysicalActivityRepository, PhysicalActivityRepository>();
             services.TryAddScoped<IDietaryBehaviourRepository, DietaryBehaviourRepository>();
+            services.TryAddScoped<IDeathRecordRepository, DeathRecordRepository>();
+            services.TryAddScoped<ILossToFollowUpRepository, LossToFollowUpRepository>();
 
             return services;
         }
 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddScoped<IAuthService, IndiaAuthService>();
-            services.AddScoped<IAuthService, UgandaAuthService>();
-            services.AddScoped<IAuthService, MasterAuthService>();
-
+            services.TryAddScoped<IAuthService, IndiaAuthService>();
+            services.TryAddScoped<IAuthService, UgandaAuthService>();
+            services.TryAddScoped<IAuthService, MasterAuthService>();
+            
             services.AddScoped<IAuthServiceFactory, AuthServiceFactory>();
+            
+            services.TryAddScoped<IIndiaRespondentService, IndiaRespondentService>();
+            services.TryAddScoped<IIndiaSocioDemographicService, IndiaSocioDemographicService>();
+            services.TryAddScoped<IIndiaPregnancyAndGdmRiskFactorsService, IndiaPregnancyAndGdmRiskFactorsService>();
+            services.TryAddScoped<IIndiaTobaccoAndAlcoholUseService, IndiaTobaccoAndAlcoholUseService>();
+            services.TryAddScoped<IIndiaPhysicalActivityService, IndiaPhysicalActivityService>();
+            services.TryAddScoped<IIndiaDietaryBehaviourService, IndiaDietaryBehaviourService>();
+            services.TryAddScoped<IIndiaDeathRecordService, IndiaDeathRecordService>();
+            services.TryAddScoped<IIndiaLossToFollowUpService, IndiaLossToFollowUpService>();
+            
+            
+            services.TryAddScoped<IUgandaRespondentService, UgandaRespondentService>();
+            services.TryAddScoped<IUgandaSocioDemographicService, UgandaSocioDemographicService>();
+            services.TryAddScoped<IUgandaPregnancyAndGdmRiskFactorsService, UgandaPregnancyAndGdmRiskFactorsService>();
+            services.TryAddScoped<IUgandaTobaccoAndAlcoholUseService, UgandaTobaccoAndAlcoholUseService>();
+            services.TryAddScoped<IUgandaPhysicalActivityService, UgandaPhysicalActivityService>();
+            services.TryAddScoped<IUgandaDietaryBehaviourService, UgandaDietaryBehaviourService>();
+            services.TryAddScoped<IUgandaDeathRecordService, UgandaDeathRecordService>();
+            services.TryAddScoped<IUgandaLossToFollowUpService, UgandaLossToFollowUpService>();
 
             return services;
         }
