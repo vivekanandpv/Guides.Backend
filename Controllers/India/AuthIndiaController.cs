@@ -1,17 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Guides.Backend.Domain;
-using Guides.Backend.Exceptions.Auth;
+﻿using System.Threading.Tasks;
 using Guides.Backend.Services.Auth;
 using Guides.Backend.StaticProviders;
 using Guides.Backend.ViewModels.Auth;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Guides.Backend.Controllers
+namespace Guides.Backend.Controllers.India
 {
     [Route(EndpointStaticStore.AuthIndiaTemplate)]
     [ApiController]

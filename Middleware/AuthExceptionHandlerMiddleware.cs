@@ -59,6 +59,13 @@ namespace Guides.Backend.Middleware
                 context.Response.StatusCode = 403;
                 await context.Response.WriteAsJsonAsync(new { Message = "Action prohibited" });
             }
+            
+            if (exception is GeneralAuthException)
+            {
+                context.Response.StatusCode = 401;
+                await context.Response.WriteAsJsonAsync(new { Message = "Action prohibited" });
+            }
+            
         }
     }
 }

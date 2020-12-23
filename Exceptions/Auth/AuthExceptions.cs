@@ -9,6 +9,11 @@ namespace Guides.Backend.Exceptions.Auth
     {
 
     }
+    
+    public class GeneralAuthException : AuthException
+    {
+    }
+    
     public class LoginFailedException : AuthException
     {
     }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Guides.Backend.Data;
+using Guides.Backend.Filters;
 using Guides.Backend.Repositories.Auth;
 using Guides.Backend.Repositories.Baseline.Implementations;
 using Guides.Backend.Repositories.Baseline.Interfaces;
@@ -14,24 +15,45 @@ using Guides.Backend.Services.Baseline.Implementations.Uganda;
 using Guides.Backend.Services.Baseline.Interfaces.India;
 using Guides.Backend.Services.Baseline.Interfaces.Uganda;
 using Guides.Backend.StaticProviders;
+using Guides.Backend.Utils;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace Guides.Backend.Configuration
 {
     public static class ServicesRegistration
     {
-        public static IServiceCollection AddApiControllers(this IServiceCollection services)
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddControllers();
+            services
+                .AddApiControllers()
+                .AddCorsConfiguration()
+                .AddGuidesContext(configuration)
+                .AddAutoMapperConfigured()
+                .AddAuthenticationConfigured()
+                .AddAuthorizationConfigured()
+                .AddRepositories()
+                .AddServices()
+                .AddAppUtils()
+                .AddSwagger();
+
             return services;
         }
 
-        public static IServiceCollection AddCorsConfiguration(this IServiceCollection services)
+        private static IServiceCollection AddApiControllers(this IServiceCollection services)
+        {
+            services.AddControllers(
+                options => options.Filters.Add(new GeneralExceptionFilter())
+                );
+            return services;
+        }
+
+        private static IServiceCollection AddCorsConfiguration(this IServiceCollection services)
         {
             services.AddCors(options =>
             {
@@ -46,7 +68,7 @@ namespace Guides.Backend.Configuration
             return services;
         }
 
-        public static IServiceCollection AddGuidesContext(this IServiceCollection services,
+        private static IServiceCollection AddGuidesContext(this IServiceCollection services,
             IConfiguration configuration)
         {
             services.AddDbContext<GuidesContext>(options =>
@@ -59,7 +81,7 @@ namespace Guides.Backend.Configuration
             return services;
         }
 
-        public static IServiceCollection AddAutoMapperConfigured(this IServiceCollection services)
+        private static IServiceCollection AddAutoMapperConfigured(this IServiceCollection services)
         {
             services.AddAutoMapper(config =>
             {
@@ -70,7 +92,7 @@ namespace Guides.Backend.Configuration
         }
 
 
-        public static IServiceCollection AddAuthenticationConfigured(this IServiceCollection services)
+        private static IServiceCollection AddAuthenticationConfigured(this IServiceCollection services)
         {
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -87,7 +109,7 @@ namespace Guides.Backend.Configuration
             return services;
         }
 
-        public static IServiceCollection AddAuthorizationConfigured(this IServiceCollection services)
+        private static IServiceCollection AddAuthorizationConfigured(this IServiceCollection services)
         {
             services.AddAuthorization(options =>
             {
@@ -160,7 +182,7 @@ namespace Guides.Backend.Configuration
             return services;
         }
 
-        public static IServiceCollection AddRepositories(this IServiceCollection services)
+        private static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             //  Auth
             services.TryAddScoped<IAuthRepository, AuthRepository>();
@@ -178,13 +200,14 @@ namespace Guides.Backend.Configuration
             return services;
         }
 
-        public static IServiceCollection AddServices(this IServiceCollection services)
+        private static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.TryAddScoped<IAuthService, IndiaAuthService>();
-            services.TryAddScoped<IAuthService, UgandaAuthService>();
-            services.TryAddScoped<IAuthService, MasterAuthService>();
+            //  Needed all 3 registrations. Do not use TryAddScoped for Auth section
+            services.AddScoped<IAuthService, IndiaAuthService>();
+            services.AddScoped<IAuthService, UgandaAuthService>();
+            services.AddScoped<IAuthService, MasterAuthService>();
             
-            services.AddScoped<IAuthServiceFactory, AuthServiceFactory>();
+            services.TryAddScoped<IAuthServiceFactory, AuthServiceFactory>();
             
             services.TryAddScoped<IIndiaRespondentService, IndiaRespondentService>();
             services.TryAddScoped<IIndiaSocioDemographicService, IndiaSocioDemographicService>();
@@ -204,6 +227,28 @@ namespace Guides.Backend.Configuration
             services.TryAddScoped<IUgandaDietaryBehaviourService, UgandaDietaryBehaviourService>();
             services.TryAddScoped<IUgandaDeathRecordService, UgandaDeathRecordService>();
             services.TryAddScoped<IUgandaLossToFollowUpService, UgandaLossToFollowUpService>();
+
+            return services;
+        }
+
+        private static IServiceCollection AddAppUtils(this IServiceCollection services)
+        {
+            services.TryAddScoped<IAppUtils, AppUtils>();
+
+            return services;
+        }
+
+
+        private static IServiceCollection AddSwagger(this IServiceCollection services)
+        {
+            services.AddSwaggerGen(config =>
+            {
+                config.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Guides Backend Project",
+                });
+            });
 
             return services;
         }

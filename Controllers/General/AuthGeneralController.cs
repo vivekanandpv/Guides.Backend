@@ -1,25 +1,21 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Guides.Backend.Services.Auth;
 using Guides.Backend.StaticProviders;
 using Guides.Backend.ViewModels.Auth;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Guides.Backend.Controllers
+namespace Guides.Backend.Controllers.General
 {
-    [Route(EndpointStaticStore.AuthUgandaTemplate)]
+    [Route(EndpointStaticStore.AuthGeneralTemplate)]
     [ApiController]
-    public class AuthUgandaController : ControllerBase
+    public class AuthGeneralController : ControllerBase
     {
         private readonly IAuthService _authService;
-
-        public AuthUgandaController(IAuthServiceFactory authServiceFactory)
+        
+        public AuthGeneralController(IAuthServiceFactory authServiceFactory)
         {
-            this._authService = authServiceFactory.Get(GeneralStaticDataProvider.CountryUganda);
+            this._authService = authServiceFactory.GetMaster();
         }
         
         [HttpPost(EndpointStaticStore.Login)]
@@ -35,7 +31,7 @@ namespace Guides.Backend.Controllers
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.IndiaUserPolicy)]
+        [Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.ChangePassword)]
         public async Task<IActionResult> ChangePassword(AuthChangePasswordViewModel viewModel)
         {
@@ -43,14 +39,14 @@ namespace Guides.Backend.Controllers
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.IndiaAdministratorPolicy)]
+        //[Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.Register)]
         public async Task<ActionResult<AuthResetKeyViewModel>> Register(AuthRegisterViewModel viewModel)
         {
             return await this._authService.Register(viewModel);
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.IndiaAdministratorPolicy)]
+        [Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.AdminBlock)]
         public async Task<IActionResult> AdminBlock(AuthAdminActionViewModel viewModel)
         {
@@ -58,14 +54,14 @@ namespace Guides.Backend.Controllers
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.IndiaAdministratorPolicy)]
+        [Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.AdminReset)]
         public async Task<ActionResult<AuthResetKeyViewModel>> AdminReset(AuthAdminActionViewModel viewModel)
         {
             return await this._authService.AdminReset(viewModel);
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.IndiaAdministratorPolicy)]
+        [Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.LoginReset)]
         public async Task<ActionResult<AuthResetKeyViewModel>> LoginReset(AuthAdminActionViewModel viewModel)
         {
