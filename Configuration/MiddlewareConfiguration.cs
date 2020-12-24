@@ -30,6 +30,8 @@ namespace Guides.Backend.Configuration
             app.UseRouting();
 
             app.UseCors();
+            
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 

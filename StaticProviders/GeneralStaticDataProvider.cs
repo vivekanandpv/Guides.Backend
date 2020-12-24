@@ -29,7 +29,7 @@ namespace Guides.Backend.StaticProviders
         public const int ResetKeyExpiresInHours = 1;
         public const Country CountryIndia = Country.India;
         public const Country CountryUganda = Country.Uganda;
-
+        public const int THUMBNAIL_SIZE = 180;
         
         
         

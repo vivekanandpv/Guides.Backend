@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -12,8 +13,11 @@ using Guides.Backend.Exceptions.Auth;
 using Guides.Backend.Repositories.Auth;
 using Guides.Backend.StaticProviders;
 using Guides.Backend.ViewModels.Auth;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
 
 namespace Guides.Backend.Services.Auth
 {
@@ -21,12 +25,18 @@ namespace Guides.Backend.Services.Auth
     {
         private readonly IAuthRepository _repository;
         private readonly IMapper _mapper;
+        private readonly IWebHostEnvironment _environment;
         private readonly ILogger _logger;
 
-        protected AuthServiceBase(IAuthRepository repository, ILoggerFactory loggerFactory, IMapper mapper)
+        protected AuthServiceBase(
+            IAuthRepository repository, 
+            ILoggerFactory loggerFactory, 
+            IMapper mapper, 
+            IWebHostEnvironment environment)
         {
             _repository = repository;
             _mapper = mapper;
+            _environment = environment;
             _logger = loggerFactory.CreateLogger(GeneralStaticDataProvider.AuthLogCategory);
         }
 
@@ -64,6 +74,7 @@ namespace Guides.Backend.Services.Auth
                     {
                         Email = viewModel.Username,
                         DisplayName = userDb.DisplayName,
+                        ProfilePhotographUrl = userDb.ImageUrl,
                         Roles = _repository.GetRolesForUser(userDb)
                     })
                 };
@@ -97,6 +108,17 @@ namespace Guides.Backend.Services.Auth
             }
 
             var user = _mapper.Map<AuthRegisterViewModel, User>(viewModel);
+            
+            if (!string.IsNullOrWhiteSpace(viewModel.ImageBase64))
+            {
+                //  profile photograph and thumbnail
+                user.ImageUrl = Guid.NewGuid().ToString();
+                var fileName = Path.Combine(_environment.WebRootPath, $"{user.ImageUrl}.jpg");
+                var fileNameTN = Path.Combine(_environment.WebRootPath, $"{user.ImageUrl}-thumbnail.jpg");
+
+                await StoreImage(viewModel.ImageBase64, fileName);
+                SaveThumbnail(fileName, fileNameTN);
+            }
 
             _logger.LogInformation($"Preparing for registration of {viewModel.Email}");
             user.CreatedOn = DateTime.UtcNow;
@@ -104,6 +126,7 @@ namespace Guides.Backend.Services.Auth
             user.ResetKey = GeneralStaticDataProvider.GetNewResetKey();
             user.ResetKeyExpiresOn = DateTime.UtcNow.AddHours(GeneralStaticDataProvider.ResetKeyExpiresInHours);
             user.LockedOn = DateTime.UtcNow;
+            user.LastUpdateOn = DateTime.UtcNow;
 
             _logger.LogInformation($"Preparing role enrollment for registration of {viewModel.Email}");
 
@@ -177,6 +200,80 @@ namespace Guides.Backend.Services.Auth
             throw new LoginFailedException();
         }
 
+        protected async Task Update(AuthUpdateViewModel viewModel, AuthRegionViewModel region)
+        {
+            var userDb = await this._repository.GetUserByEmail(viewModel.Username);
+
+            if (userDb == null)
+            {
+                this._logger.LogInformation($"Update prevented for non-existent user {viewModel.Username}");
+                throw new AdminActionNotSupportedException();
+            }
+            
+            if (!IsRegionAllowed(userDb.Country, region))
+            {
+                _logger.LogInformation($"Cross region update detected for username: ${viewModel.Username} at region: {region?.Country}");
+                throw new AdminActionNotSupportedException();
+            }
+            
+            if (userDb.IsAdminLocked)
+            {
+                _logger.LogInformation($"Update prevented for admin blocked user: {viewModel.Username}");
+                throw new AdminActionNotSupportedException();
+            }
+            
+            this._logger.LogInformation($"Update process start for username: {viewModel.Username}");
+            userDb.FullName = viewModel.FullName;
+            userDb.MobileNumber = viewModel.MobileNumber;
+            userDb.IdentityInformation = viewModel.IdentityInformation;
+            userDb.OfficialPosition = viewModel.OfficialPosition;
+            userDb.LastUpdateOn = DateTime.UtcNow;
+            
+            //  Image
+            if (!string.IsNullOrWhiteSpace(viewModel.ImageBase64))
+            {
+                try
+                {
+                    //  delete old profile photo files
+                    if (!string.IsNullOrWhiteSpace(userDb.ImageUrl))
+                    {
+                        var fileNameOriginal = Path.Combine(_environment.WebRootPath, $"{userDb.ImageUrl}.jpg");
+                        var fileNameTNOriginal = Path.Combine(_environment.WebRootPath, $"{userDb.ImageUrl}-thumbnail.jpg");
+
+                        var imageExists = System.IO.File.Exists(fileNameOriginal);
+                        var tnExists = System.IO.File.Exists(fileNameTNOriginal);
+
+                        if (imageExists)
+                        {
+                            System.IO.File.Delete(fileNameOriginal);
+                        }
+
+                        if (tnExists)
+                        {
+                            System.IO.File.Delete(fileNameTNOriginal);
+                        }
+                    }
+
+
+                    //  set profile photograph and thumbnail afresh
+                    userDb.ImageUrl = Guid.NewGuid().ToString();
+                    var fileName = Path.Combine(_environment.WebRootPath, $"{userDb.ImageUrl}.jpg");
+                    var fileNameTN = Path.Combine(_environment.WebRootPath, $"{userDb.ImageUrl}-thumbnail.jpg");
+
+                    await StoreImage(viewModel.ImageBase64, fileName);
+
+                    SaveThumbnail(fileName, fileNameTN);
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError(e.Message, e);
+                }
+            }
+
+            await this._repository.UpdateUser(userDb);
+
+            _logger.LogInformation($"User update request completed for username: {viewModel.Username}");
+        }
         protected async Task<AuthResetKeyViewModel> AdminReset(AuthAdminActionViewModel viewModel, AuthRegionViewModel region)
         {
             var userDb = await _repository.GetUserByEmail(viewModel.Username);
@@ -349,8 +446,12 @@ namespace Guides.Backend.Services.Auth
             {
                 new Claim(ClaimTypes.Email, viewModel.Email),
                 new Claim(ClaimTypes.Name, viewModel.DisplayName),
-
             };
+            
+            if (!string.IsNullOrWhiteSpace(viewModel.ProfilePhotographUrl))
+            {
+                claims.Add(new Claim("ImageUrl", viewModel.ProfilePhotographUrl));
+            }
 
             foreach (var role in viewModel.Roles)
             {
@@ -521,6 +622,44 @@ namespace Guides.Backend.Services.Auth
             return GeneralStaticDataProvider.GeneralAdministratorGroup.Any(r => r == role)
                    || GeneralStaticDataProvider.IndiaAdministratorGroup.Any(r => r == role)
                    || GeneralStaticDataProvider.UgandaAdministratorGroup.Any(r => r == role);
+        }
+        
+        private static async Task StoreImage(string base64String, string path)
+        {
+            var fileBytes = Convert.FromBase64String(base64String);
+            await System.IO.File.WriteAllBytesAsync(path, fileBytes);
+        }
+        
+        private void SaveThumbnail(string originalFileName, string thumbnailFileName)
+        {
+            using (var image = Image.Load(originalFileName))
+            {
+                var originalHeight = image.Height;
+                var origImageWidth = image.Width;
+
+                int? newHeight = null;
+                int? newWidth = null;
+
+
+
+                if (originalHeight >= origImageWidth)
+                {
+                    var ratio = Convert.ToDouble(origImageWidth) / originalHeight;
+                    newHeight = GeneralStaticDataProvider.THUMBNAIL_SIZE;
+                    newWidth = Convert.ToInt32(GeneralStaticDataProvider.THUMBNAIL_SIZE * ratio);
+                }
+                else
+                {
+                    var ratio = Convert.ToDouble(originalHeight) / origImageWidth;
+                    newWidth = GeneralStaticDataProvider.THUMBNAIL_SIZE;
+                    newHeight = Convert.ToInt32(GeneralStaticDataProvider.THUMBNAIL_SIZE * ratio);
+                }
+
+                image.Mutate(x => x
+                    .Resize(newWidth.Value, newHeight.Value)
+                );
+                image.Save(thumbnailFileName); // Automatic encoder selected based on extension.
+            }
         }
     }
 }

@@ -39,6 +39,8 @@ namespace Guides.Backend.Domain
         public int FailedAttempts { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
+        public string ImageUrl { get; set; }
+        public DateTime? LastUpdateOn { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }
         
         //  Domain

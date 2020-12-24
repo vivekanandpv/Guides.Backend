@@ -31,7 +31,7 @@ namespace Guides.Backend.Controllers.Uganda
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.IndiaUserPolicy)]
+        [Authorize(policy:GeneralStaticDataProvider.UgandaUserPolicy)]
         [HttpPost(EndpointStaticStore.ChangePassword)]
         public async Task<IActionResult> ChangePassword(AuthChangePasswordViewModel viewModel)
         {
@@ -39,14 +39,22 @@ namespace Guides.Backend.Controllers.Uganda
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.IndiaAdministratorPolicy)]
+        [Authorize(policy:GeneralStaticDataProvider.UgandaAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.Register)]
         public async Task<ActionResult<AuthResetKeyViewModel>> Register(AuthRegisterViewModel viewModel)
         {
             return await this._authService.Register(viewModel);
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.IndiaAdministratorPolicy)]
+        [Authorize(policy:GeneralStaticDataProvider.UgandaAdministratorPolicy)]
+        [HttpPut(EndpointStaticStore.Update)]
+        public async Task<ActionResult> Update(AuthUpdateViewModel viewModel)
+        {
+            await this._authService.Update(viewModel);
+            return Ok();
+        }
+        
+        [Authorize(policy:GeneralStaticDataProvider.UgandaAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.AdminBlock)]
         public async Task<IActionResult> AdminBlock(AuthAdminActionViewModel viewModel)
         {
@@ -54,14 +62,14 @@ namespace Guides.Backend.Controllers.Uganda
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.IndiaAdministratorPolicy)]
+        [Authorize(policy:GeneralStaticDataProvider.UgandaAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.AdminReset)]
         public async Task<ActionResult<AuthResetKeyViewModel>> AdminReset(AuthAdminActionViewModel viewModel)
         {
             return await this._authService.AdminReset(viewModel);
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.IndiaAdministratorPolicy)]
+        [Authorize(policy:GeneralStaticDataProvider.UgandaAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.LoginReset)]
         public async Task<ActionResult<AuthResetKeyViewModel>> LoginReset(AuthAdminActionViewModel viewModel)
         {

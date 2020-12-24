@@ -14,6 +14,7 @@ namespace Guides.Backend.Services.Auth
         AuthRegionViewModel GetRegion();
         Task<AuthTokenViewModel> Login(AuthLoginViewModel viewModel);
         Task<AuthResetKeyViewModel> Register(AuthRegisterViewModel viewModel);
+        Task Update(AuthUpdateViewModel viewModel);
         Task ChangePassword(AuthChangePasswordViewModel viewModel);
         Task<AuthResetKeyViewModel> AdminReset(AuthAdminActionViewModel viewModel);
         Task<AuthResetKeyViewModel> LoginReset(AuthAdminActionViewModel viewModel);

@@ -53,8 +53,30 @@ namespace Guides.Backend.ViewModels.Auth
         public string IdentityInformation { get; set; }
         [MaxLength(50)]
         public string OfficialPosition { get; set; }
+        
+        public string ImageBase64 { get; set; }
         [Required, MinLength(1)] 
         public string[] Roles { get; set; }
+    }
+    
+    public class AuthUpdateViewModel
+    {
+        [MaxLength(100), Required]
+        public string Username { get; set; }
+        [MaxLength(100), Required]
+        public string FullName { get; set; }
+        [Required]
+        public long MobileNumber { get; set; }
+        
+        [MaxLength(50), Required]
+        public string DisplayName { get; set; }
+        
+        [MaxLength(50)]
+        public string IdentityInformation { get; set; }
+        [MaxLength(50)]
+        public string OfficialPosition { get; set; }
+        
+        public string ImageBase64 { get; set; }
     }
 
     public class AuthLoginViewModel
@@ -74,6 +96,7 @@ namespace Guides.Backend.ViewModels.Auth
     {
         public string Email { get; set; }
         public string DisplayName { get; set; }
+        public string ProfilePhotographUrl { get; set; }
         public string[] Roles { get; set; }
     }
     

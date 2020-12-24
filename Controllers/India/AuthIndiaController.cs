@@ -47,6 +47,14 @@ namespace Guides.Backend.Controllers.India
         }
         
         [Authorize(policy:GeneralStaticDataProvider.IndiaAdministratorPolicy)]
+        [HttpPut(EndpointStaticStore.Update)]
+        public async Task<ActionResult> Update(AuthUpdateViewModel viewModel)
+        {
+            await this._authService.Update(viewModel);
+            return Ok();
+        }
+        
+        [Authorize(policy:GeneralStaticDataProvider.IndiaAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.AdminBlock)]
         public async Task<IActionResult> AdminBlock(AuthAdminActionViewModel viewModel)
         {

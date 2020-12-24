@@ -38,6 +38,7 @@
         public const string AdminBlock = "admin-block";
         public const string AdminReset = "admin-reset";
         public const string LoginReset = "login-reset";
+        public const string Update = "update";
 
         public const string GetById = "{id:int}";
     }

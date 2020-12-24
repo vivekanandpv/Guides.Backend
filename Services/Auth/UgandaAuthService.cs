@@ -6,6 +6,7 @@ using AutoMapper;
 using Guides.Backend.Domain;
 using Guides.Backend.Repositories.Auth;
 using Guides.Backend.ViewModels.Auth;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace Guides.Backend.Services.Auth
@@ -14,7 +15,7 @@ namespace Guides.Backend.Services.Auth
     {
         private readonly AuthRegionViewModel _region;
         
-        public UgandaAuthService(IAuthRepository repository, ILoggerFactory loggerFactory, IMapper mapper) : base(repository, loggerFactory, mapper)
+        public UgandaAuthService(IAuthRepository repository, ILoggerFactory loggerFactory, IMapper mapper, IWebHostEnvironment environment) : base(repository, loggerFactory, mapper, environment)
         {
             this._region = new AuthRegionViewModel
             {
@@ -37,6 +38,11 @@ namespace Guides.Backend.Services.Auth
             return await base.Register(viewModel, this._region);
         }
 
+        async Task IAuthService.Update(AuthUpdateViewModel viewModel)
+        {
+            await base.Update(viewModel, this._region);
+        }
+        
         async Task IAuthService.ChangePassword(AuthChangePasswordViewModel viewModel)
         {
             await base.ChangePassword(viewModel, this._region);

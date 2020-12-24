@@ -38,12 +38,20 @@ namespace Guides.Backend.Controllers.General
             await this._authService.ChangePassword(viewModel);
             return Ok();
         }
-        
-        //[Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
+
+        [Authorize(policy: GeneralStaticDataProvider.GeneralAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.Register)]
         public async Task<ActionResult<AuthResetKeyViewModel>> Register(AuthRegisterViewModel viewModel)
         {
             return await this._authService.Register(viewModel);
+        }
+        
+        [Authorize(policy: GeneralStaticDataProvider.GeneralAdministratorPolicy)]
+        [HttpPut(EndpointStaticStore.Update)]
+        public async Task<ActionResult> Update(AuthUpdateViewModel viewModel)
+        {
+            await this._authService.Update(viewModel);
+            return Ok();
         }
         
         [Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
