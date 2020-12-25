@@ -26,9 +26,9 @@ namespace Guides.Backend.ViewModels.Baseline
         public long? Telephone2 { get; set; }
         [MaxLength(50)]
         public string Person2 { get; set; }
-        public MobilePhone OwnAMobilePhone { get; set; }
-        public MobilePhone SecondaryAccessToMobilePhone { get; set; }
-        public ConditionalBoolean SecondaryAccessToSmartphone { get; set; }
+        public string OwnAMobilePhone { get; set; }
+        public string SecondaryAccessToMobilePhone { get; set; }
+        public string SecondaryAccessToSmartphone { get; set; }
     }
 
     public abstract class RespondentIndiaViewModelBase : RespondentViewModelBase
@@ -116,18 +116,18 @@ namespace Guides.Backend.ViewModels.Baseline
         public DateTime? DateOfBirth { get; set; }
         [Range(18, 50)]
         public int? Age { get; set; }
-        public Religion Religion { get; set; }
-        public MaritalStatus MaritalStatus { get; set; }
+        public string Religion { get; set; }
+        public string MaritalStatus { get; set; }
         [Required, Range(1, 20)]
         public int NPeopleInHousehold { get; set; }
         [Required, Range(1, 20)]
         public int NRooms { get; set; }
-        public Education RespondentEducation { get; set; }
-        public Education SpouseEducation { get; set; }
-        public Employment Employment { get; set; }
+        public string RespondentEducation { get; set; }
+        public string SpouseEducation { get; set; }
+        public string Employment { get; set; }
         [Required, Range(1, 2_000_000)]
         public int MonthlyIncome { get; set; }
-        public IncomeSufficiency IncomeSufficiency { get; set; }
+        public string IncomeSufficiency { get; set; }
     }
 
     public class SocioDemographicIndiaRegisterViewModel : SocioDemographicViewModel
@@ -163,7 +163,7 @@ namespace Guides.Backend.ViewModels.Baseline
         public double? RegistrationLongitude { get; set; }
 
         //  Domain
-        public UgandaTribe UgandaTribe { get; set; }
+        public string UgandaTribe { get; set; }
     }
 
 
@@ -174,7 +174,7 @@ namespace Guides.Backend.ViewModels.Baseline
         public int RespondentId { get; set; }
 
         //  Domain
-        public UgandaTribe UgandaTribe { get; set; }
+        public string UgandaTribe { get; set; }
     }
 
     public class SocioDemographicIndiaListViewModel : SocioDemographicIndiaUpdateViewModel
@@ -193,8 +193,8 @@ namespace Guides.Backend.ViewModels.Baseline
         public int? Parity { get; set; }
         [Range(0, 20)]
         public int? Living { get; set; }
-        public GeneralTriplet PreviousBabyWeightOver4kg { get; set; }
-        public GeneralTriplet BabySizeLargerThanAverage { get; set; }
+        public string PreviousBabyWeightOver4kg { get; set; }
+        public string BabySizeLargerThanAverage { get; set; }
         [Range(0, 240)]
         public int? MonthsFromLastDelivery { get; set; }
         [DataType(DataType.Date)]
@@ -205,14 +205,14 @@ namespace Guides.Backend.ViewModels.Baseline
         public DateTime? EDD { get; set; }
         [Range(0, 8)]
         public int? FirstAncVisitMonth { get; set; }
-        public GeneralTriplet WeightMeasuredInCurrentPregnancy { get; set; }
+        public string WeightMeasuredInCurrentPregnancy { get; set; }
         [Range(25, 150)]
         public double? Weight { get; set; }
-        public GeneralTriplet HtnOrPreEclampsia { get; set; }
-        public GeneralTriplet Gdm { get; set; }
-        public GeneralTriplet Dm { get; set; }
-        public DiabetesType DiabetesType { get; set; }
-        public GeneralTriplet DmInFamily { get; set; }
+        public string HtnOrPreEclampsia { get; set; }
+        public string Gdm { get; set; }
+        public string Dm { get; set; }
+        public string DiabetesType { get; set; }
+        public string DmInFamily { get; set; }
     }
 
     public class PregnancyAndGdmRiskFactorsRegisterViewModel : PregnancyAndGdmRiskFactorsViewModel
@@ -242,9 +242,9 @@ namespace Guides.Backend.ViewModels.Baseline
     public abstract class TobaccoAndAlcoholUseViewModel
     {
         public bool TobaccoUsed { get; set; }
-        public TobaccoAndAlcoholConsumption Smoking { get; set; }
-        public TobaccoAndAlcoholConsumption OtherTobaccoUse { get; set; }
-        public TobaccoAndAlcoholConsumption Alcohol { get; set; }
+        public string Smoking { get; set; }
+        public string OtherTobaccoUse { get; set; }
+        public string Alcohol { get; set; }
     }
 
     public class TobaccoAndAlcoholUseRegisterViewModel : TobaccoAndAlcoholUseViewModel
@@ -331,18 +331,18 @@ namespace Guides.Backend.ViewModels.Baseline
     public abstract class DietaryBehaviourViewModel
     {
         //  Domain
-        public DietaryBehaviourSelectionA Breakfast { get; set; }
-        public DietaryBehaviourSelectionA RegularMeals { get; set; }
-        public DietaryBehaviourSelectionB Fruits { get; set; }
-        public DietaryBehaviourSelectionB Vegetables { get; set; }
-        public DietaryBehaviourSelectionB Carbohydrates { get; set; }
-        public DietaryBehaviourSelectionB SugaryDrinks { get; set; }
-        public DietaryBehaviourSelectionB Pulses { get; set; }
-        public DietaryBehaviourSelectionB EggsOrDairy { get; set; }
-        public DietaryBehaviourSelectionB FishOrChicken { get; set; }
-        public DietaryBehaviourSelectionB RedMeat { get; set; }
-        public DietaryBehaviourSelectionB Snack { get; set; }
-        public DietaryBehaviourSelectionA OutsideMeals { get; set; }
+        public string Breakfast { get; set; }
+        public string RegularMeals { get; set; }
+        public string Fruits { get; set; }
+        public string Vegetables { get; set; }
+        public string Carbohydrates { get; set; }
+        public string SugaryDrinks { get; set; }
+        public string Pulses { get; set; }
+        public string EggsOrDairy { get; set; }
+        public string FishOrChicken { get; set; }
+        public string RedMeat { get; set; }
+        public string Snack { get; set; }
+        public string OutsideMeals { get; set; }
     }
 
     public class DietaryBehaviourRegisterViewModel : DietaryBehaviourViewModel
@@ -409,7 +409,7 @@ namespace Guides.Backend.ViewModels.Baseline
     public abstract class LossToFollowUpViewModel
     {
         //  Domain
-        public VoluntaryExitReason ReasonForExit { get; set; }
+        public string ReasonForExit { get; set; }
         public string ExtraInformation { get; set; }
         public string RARemarks { get; set; }
     }

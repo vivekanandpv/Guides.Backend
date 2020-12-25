@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using AutoMapper;
 using Guides.Backend.Data;
@@ -23,6 +24,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 
 namespace Guides.Backend.Configuration
 {
@@ -36,7 +38,6 @@ namespace Guides.Backend.Configuration
                 .AddGuidesContext(configuration)
                 .AddAutoMapperConfigured()
                 .AddAuthenticationConfigured()
-                .AddAuthorizationConfigured()
                 .AddRepositories()
                 .AddServices()
                 .AddAppUtils()
@@ -48,8 +49,17 @@ namespace Guides.Backend.Configuration
         private static IServiceCollection AddApiControllers(this IServiceCollection services)
         {
             services.AddControllers(
-                options => options.Filters.Add(new GeneralExceptionFilter())
-                );
+                    options => options.Filters.Add(new GeneralExceptionFilter())
+                )
+                .AddJsonOptions(opts =>
+                {
+                    opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                })
+                .AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+                });
+            
             return services;
         }
 
@@ -105,79 +115,6 @@ namespace Guides.Backend.Configuration
                         ValidateAudience = false
                     };
                 });
-
-            return services;
-        }
-
-        private static IServiceCollection AddAuthorizationConfigured(this IServiceCollection services)
-        {
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy(
-                    GeneralStaticDataProvider.GeneralAdministratorPolicy,
-                    policy => policy.RequireClaim(
-                        GeneralStaticDataProvider.Roles,
-                        GeneralStaticDataProvider.GeneralAdministratorGroup
-                        )
-                    );
-                options.AddPolicy(
-                    GeneralStaticDataProvider.IndiaAdministratorPolicy, 
-                    policy => policy.RequireClaim(
-                        GeneralStaticDataProvider.Roles, 
-                        GeneralStaticDataProvider.IndiaAdministratorGroup
-                        )
-                    );
-                options.AddPolicy(
-                    GeneralStaticDataProvider.UgandaAdministratorPolicy, 
-                    policy => policy.RequireClaim(
-                        GeneralStaticDataProvider.Roles,
-                        GeneralStaticDataProvider.UgandaAdministratorGroup
-                        )
-                    );
-                options.AddPolicy(
-                    GeneralStaticDataProvider.IndiaUserPolicy,
-                    policy => policy.RequireClaim(
-                        GeneralStaticDataProvider.Roles, 
-                        GeneralStaticDataProvider.IndiaUserGroup
-                        )
-                    );
-                options.AddPolicy(
-                    GeneralStaticDataProvider.UgandaUserPolicy,
-                    policy => policy.RequireClaim(
-                        GeneralStaticDataProvider.Roles, 
-                        GeneralStaticDataProvider.UgandaUserGroup
-                        )
-                    );
-                options.AddPolicy(
-                    GeneralStaticDataProvider.IndiaDataAnalystPolicy, 
-                    policy => policy.RequireClaim(
-                        GeneralStaticDataProvider.Roles, 
-                        GeneralStaticDataProvider.IndiaDataAnalystGroup
-                        )
-                    );
-                options.AddPolicy(
-                    GeneralStaticDataProvider.UgandaDataAnalystPolicy,
-                    policy => policy.RequireClaim(
-                        GeneralStaticDataProvider.Roles, 
-                        GeneralStaticDataProvider.UgandaDataAnalystGroup
-                        )
-                    );
-                options.AddPolicy(
-                    GeneralStaticDataProvider.ProjectDataAnalystPolicy, 
-                    policy => policy.RequireClaim(
-                        GeneralStaticDataProvider.Roles, 
-                        GeneralStaticDataProvider.ProjectDataAnalystGroup
-                        )
-                    );
-                
-                options.AddPolicy(
-                    GeneralStaticDataProvider.AllUserPolicy, 
-                    policy => policy.RequireClaim(
-                        GeneralStaticDataProvider.Roles, 
-                        GeneralStaticDataProvider.AllUserGroup
-                    )
-                );
-            });
 
             return services;
         }

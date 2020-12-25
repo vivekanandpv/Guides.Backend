@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Guides.Backend.Controllers.Uganda
 {
+    [Authorize(Roles = GeneralStaticDataProvider.UgandaUserRoles)]
     [Route(EndpointStaticStore.AuthUgandaTemplate)]
     [ApiController]
     public class AuthUgandaController : ControllerBase
@@ -18,12 +19,14 @@ namespace Guides.Backend.Controllers.Uganda
             this._authService = authServiceFactory.Get(GeneralStaticDataProvider.CountryUganda);
         }
         
+        [AllowAnonymous]
         [HttpPost(EndpointStaticStore.Login)]
         public async Task<ActionResult<AuthTokenViewModel>> Login(AuthLoginViewModel viewModel)
         {
             return await this._authService.Login(viewModel);
         }
         
+        [AllowAnonymous]
         [HttpPost(EndpointStaticStore.ResetPassword)]
         public async Task<IActionResult> ResetPassword(AuthResetPasswordViewModel viewModel)
         {
@@ -31,7 +34,6 @@ namespace Guides.Backend.Controllers.Uganda
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.UgandaUserPolicy)]
         [HttpPost(EndpointStaticStore.ChangePassword)]
         public async Task<IActionResult> ChangePassword(AuthChangePasswordViewModel viewModel)
         {
@@ -39,14 +41,14 @@ namespace Guides.Backend.Controllers.Uganda
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.UgandaAdministratorPolicy)]
+        [Authorize(Roles = GeneralStaticDataProvider.UgandaAdministratorRoles)]
         [HttpPost(EndpointStaticStore.Register)]
         public async Task<ActionResult<AuthResetKeyViewModel>> Register(AuthRegisterViewModel viewModel)
         {
             return await this._authService.Register(viewModel);
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.UgandaAdministratorPolicy)]
+        [Authorize(Roles = GeneralStaticDataProvider.UgandaAdministratorRoles)]
         [HttpPut(EndpointStaticStore.Update)]
         public async Task<ActionResult> Update(AuthUpdateViewModel viewModel)
         {
@@ -54,7 +56,7 @@ namespace Guides.Backend.Controllers.Uganda
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.UgandaAdministratorPolicy)]
+        [Authorize(Roles = GeneralStaticDataProvider.UgandaAdministratorRoles)]
         [HttpPost(EndpointStaticStore.AdminBlock)]
         public async Task<IActionResult> AdminBlock(AuthAdminActionViewModel viewModel)
         {
@@ -62,14 +64,14 @@ namespace Guides.Backend.Controllers.Uganda
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.UgandaAdministratorPolicy)]
+        [Authorize(Roles = GeneralStaticDataProvider.UgandaAdministratorRoles)]
         [HttpPost(EndpointStaticStore.AdminReset)]
         public async Task<ActionResult<AuthResetKeyViewModel>> AdminReset(AuthAdminActionViewModel viewModel)
         {
             return await this._authService.AdminReset(viewModel);
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.UgandaAdministratorPolicy)]
+        [Authorize(Roles = GeneralStaticDataProvider.UgandaAdministratorRoles)]
         [HttpPost(EndpointStaticStore.LoginReset)]
         public async Task<ActionResult<AuthResetKeyViewModel>> LoginReset(AuthAdminActionViewModel viewModel)
         {

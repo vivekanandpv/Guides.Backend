@@ -10,11 +10,12 @@ using Guides.Backend.Services.Baseline.Interfaces.India;
 using Guides.Backend.StaticProviders;
 using Guides.Backend.Utils;
 using Guides.Backend.ViewModels.Baseline;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 
 namespace Guides.Backend.Controllers.India
 {
-    [Authorize(policy:GeneralStaticDataProvider.IndiaUserPolicy)]
+    [Authorize(Roles = GeneralStaticDataProvider.IndiaUserRoles)]
     [Route(EndpointStaticStore.RespondentsIndiaTemplate)]
     [ApiController]
     public class RespondentsController : ControllerBase

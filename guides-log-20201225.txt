@@ -1,0 +1,839 @@
+2020-12-25 00:00:22.413 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 00:00:23.132 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 00:00:23.135 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 00:00:23.137 +05:30 [INF] Hosting environment: Development
+2020-12-25 00:00:23.138 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 00:00:25.712 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 00:00:25.858 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:00:25.885 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 173.9800ms
+2020-12-25 00:00:25.908 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783
+2020-12-25 00:00:26.156 +05:30 [INF] Successfully validated the token.
+2020-12-25 00:00:26.160 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:00:26.165 +05:30 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=email and Claim.Value is one of the following values: (vivekanandpv@outlook.com)
+2020-12-25 00:00:26.170 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2020-12-25 00:00:26.175 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783 - 403 0 - 267.4782ms
+2020-12-25 00:08:07.712 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 00:08:08.300 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 00:08:08.307 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 00:08:08.308 +05:30 [INF] Hosting environment: Development
+2020-12-25 00:08:08.310 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 00:08:12.857 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 00:08:13.001 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:08:13.027 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 172.8357ms
+2020-12-25 00:08:13.047 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783
+2020-12-25 00:08:13.270 +05:30 [INF] Successfully validated the token.
+2020-12-25 00:08:13.274 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:08:13.279 +05:30 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=Roles and Claim.Value is one of the following values: (GeneralAdministrator|ProgramCoordinator|IndiaAdministrator|IndiaResearchAssistant|IndiaFieldOperative)
+2020-12-25 00:08:13.285 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2020-12-25 00:08:13.291 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783 - 403 0 - 243.8632ms
+2020-12-25 00:10:14.988 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 00:10:15.622 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 00:10:15.625 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 00:10:15.626 +05:30 [INF] Hosting environment: Development
+2020-12-25 00:10:15.628 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 00:10:22.105 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 00:10:22.250 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:10:22.270 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 168.1476ms
+2020-12-25 00:10:22.300 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783
+2020-12-25 00:10:22.538 +05:30 [INF] Successfully validated the token.
+2020-12-25 00:10:22.541 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:10:22.546 +05:30 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=Roles and Claim.Value is one of the following values: (GeneralAdministrator|ProgramCoordinator|IndiaAdministrator|IndiaResearchAssistant|IndiaFieldOperative)
+2020-12-25 00:10:22.553 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2020-12-25 00:10:22.557 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783 - 403 0 - 256.4114ms
+2020-12-25 00:29:45.476 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 00:29:46.068 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 00:29:46.071 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 00:29:46.073 +05:30 [INF] Hosting environment: Development
+2020-12-25 00:29:46.075 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 00:29:49.123 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 00:29:49.275 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:29:49.299 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 177.2341ms
+2020-12-25 00:29:49.318 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783
+2020-12-25 00:29:49.537 +05:30 [INF] Successfully validated the token.
+2020-12-25 00:29:49.541 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:29:49.548 +05:30 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=Roles and Claim.Value is one of the following values: (GeneralAdministrator|ProgramCoordinator|IndiaAdministrator|IndiaResearchAssistant|IndiaFieldOperative)
+2020-12-25 00:29:49.552 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2020-12-25 00:29:49.554 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783 - 403 0 - 236.2773ms
+2020-12-25 00:30:16.255 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 00:30:16.873 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 00:30:16.875 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 00:30:16.877 +05:30 [INF] Hosting environment: Development
+2020-12-25 00:30:16.878 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 00:30:18.437 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 00:30:18.586 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:30:18.606 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 170.1337ms
+2020-12-25 00:30:18.632 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783
+2020-12-25 00:30:18.858 +05:30 [INF] Successfully validated the token.
+2020-12-25 00:30:18.864 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:30:18.878 +05:30 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=Roles and Claim.Value is one of the following values: (GeneralAdministrator|ProgramCoordinator|IndiaAdministrator|IndiaResearchAssistant|IndiaFieldOperative)
+2020-12-25 00:30:18.883 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2020-12-25 00:30:18.884 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783 - 403 0 - 252.6180ms
+2020-12-25 00:35:25.065 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 00:35:25.601 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 00:35:25.604 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 00:35:25.605 +05:30 [INF] Hosting environment: Development
+2020-12-25 00:35:25.607 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 00:35:30.119 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 00:35:30.268 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:35:30.290 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 171.7994ms
+2020-12-25 00:35:30.316 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783
+2020-12-25 00:35:30.545 +05:30 [INF] Successfully validated the token.
+2020-12-25 00:35:30.550 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:35:30.557 +05:30 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=Roles and Claim.Value is one of the following values: (GeneralAdministrator|ProgramCoordinator|IndiaAdministrator|IndiaResearchAssistant|IndiaFieldOperative)
+2020-12-25 00:35:30.563 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2020-12-25 00:35:30.568 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783 - 403 0 - 252.0304ms
+2020-12-25 00:37:01.700 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 00:37:02.250 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 00:37:02.252 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 00:37:02.254 +05:30 [INF] Hosting environment: Development
+2020-12-25 00:37:02.256 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 00:37:06.529 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 00:37:06.557 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:37:06.575 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 46.6973ms
+2020-12-25 00:37:06.597 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783
+2020-12-25 00:37:06.600 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:37:06.924 +05:30 [INF] Successfully validated the token.
+2020-12-25 00:37:06.935 +05:30 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=Roles and Claim.Value is one of the following values: (GeneralAdministrator|ProgramCoordinator|IndiaAdministrator|IndiaResearchAssistant|IndiaFieldOperative)
+2020-12-25 00:37:06.939 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2020-12-25 00:37:06.944 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783 - 403 0 - 347.4932ms
+2020-12-25 00:38:26.351 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 00:38:27.007 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 00:38:27.009 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 00:38:27.011 +05:30 [INF] Hosting environment: Development
+2020-12-25 00:38:27.012 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 00:38:32.124 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 00:38:32.269 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:38:32.289 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 166.0528ms
+2020-12-25 00:38:32.314 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783
+2020-12-25 00:38:32.533 +05:30 [INF] Successfully validated the token.
+2020-12-25 00:38:32.538 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:38:32.549 +05:30 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=Roles and Claim.Value is one of the following values: (GeneralAdministrator|ProgramCoordinator|IndiaAdministrator|IndiaResearchAssistant|IndiaFieldOperative)
+2020-12-25 00:38:32.552 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2020-12-25 00:38:32.557 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783 - 403 0 - 242.5803ms
+2020-12-25 00:42:20.672 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 00:42:21.353 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 00:42:21.356 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 00:42:21.357 +05:30 [INF] Hosting environment: Development
+2020-12-25 00:42:21.359 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 00:42:25.031 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 00:42:25.179 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:42:25.197 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 168.2541ms
+2020-12-25 00:42:25.221 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783
+2020-12-25 00:42:25.451 +05:30 [INF] Successfully validated the token.
+2020-12-25 00:42:25.455 +05:30 [INF] CORS policy execution successful.
+2020-12-25 00:42:25.461 +05:30 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=Roles and Claim.Value is one of the following values: (GeneralAdministrator|ProgramCoordinator|IndiaAdministrator|IndiaResearchAssistant|IndiaFieldOperative)
+2020-12-25 00:42:25.467 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2020-12-25 00:42:25.470 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 783 - 403 0 - 248.1495ms
+2020-12-25 07:46:42.110 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 07:46:42.857 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 07:46:42.860 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 07:46:42.861 +05:30 [INF] Hosting environment: Development
+2020-12-25 07:46:42.862 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 07:48:47.313 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 07:48:47.485 +05:30 [INF] CORS policy execution successful.
+2020-12-25 07:48:47.512 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 200.8000ms
+2020-12-25 07:48:47.540 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 777
+2020-12-25 07:48:47.802 +05:30 [INF] Successfully validated the token.
+2020-12-25 07:48:47.805 +05:30 [INF] CORS policy execution successful.
+2020-12-25 07:48:47.810 +05:30 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=roles and Claim.Value is one of the following values: (GeneralAdministrator|ProgramCoordinator|IndiaAdministrator|IndiaResearchAssistant|IndiaFieldOperative)
+2020-12-25 07:48:47.817 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2020-12-25 07:48:47.820 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 777 - 403 0 - 279.9297ms
+2020-12-25 07:57:22.391 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 07:57:23.043 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 07:57:23.045 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 07:57:23.046 +05:30 [INF] Hosting environment: Development
+2020-12-25 07:57:23.048 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 07:57:30.255 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 07:57:30.408 +05:30 [INF] CORS policy execution successful.
+2020-12-25 07:57:30.426 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 173.6128ms
+2020-12-25 07:57:30.445 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 777
+2020-12-25 07:57:30.670 +05:30 [INF] Successfully validated the token.
+2020-12-25 07:57:30.674 +05:30 [INF] CORS policy execution successful.
+2020-12-25 07:57:30.685 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GeneralAdministrator1)
+2020-12-25 07:57:30.692 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2020-12-25 07:57:30.696 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 777 - 403 0 - 251.1679ms
+2020-12-25 07:57:55.620 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 07:57:56.172 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 07:57:56.175 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 07:57:56.177 +05:30 [INF] Hosting environment: Development
+2020-12-25 07:57:56.179 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 07:58:01.069 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 07:58:01.215 +05:30 [INF] CORS policy execution successful.
+2020-12-25 07:58:01.234 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 166.7230ms
+2020-12-25 07:58:01.257 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 777
+2020-12-25 07:58:01.484 +05:30 [INF] Successfully validated the token.
+2020-12-25 07:58:01.488 +05:30 [INF] CORS policy execution successful.
+2020-12-25 07:58:01.492 +05:30 [INF] Authorization was successful.
+2020-12-25 07:58:01.496 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend)'
+2020-12-25 07:58:01.534 +05:30 [INF] Route matched with {action = "Register", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Register(Guides.Backend.ViewModels.Baseline.RespondentIndiaRegisterViewModel) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 07:58:01.974 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-12-25 07:58:02.004 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend) in 460.1277ms
+2020-12-25 07:58:02.012 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend)'
+2020-12-25 07:58:02.019 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 777 - 400 - application/problem+json;+charset=utf-8 762.2276ms
+2020-12-25 09:19:38.570 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 09:19:39.258 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 09:19:39.261 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 09:19:39.263 +05:30 [INF] Hosting environment: Development
+2020-12-25 09:19:39.264 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 10:46:17.399 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 10:46:18.118 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 10:46:18.120 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 10:46:18.122 +05:30 [INF] Hosting environment: Development
+2020-12-25 10:46:18.125 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 10:46:28.175 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 10:46:28.336 +05:30 [INF] CORS policy execution successful.
+2020-12-25 10:46:28.362 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 187.9594ms
+2020-12-25 10:46:28.385 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 777
+2020-12-25 10:46:28.626 +05:30 [INF] Successfully validated the token.
+2020-12-25 10:46:28.631 +05:30 [INF] CORS policy execution successful.
+2020-12-25 10:46:28.641 +05:30 [INF] Authorization was successful.
+2020-12-25 10:46:28.644 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend)'
+2020-12-25 10:46:28.681 +05:30 [INF] Route matched with {action = "Register", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Register(Guides.Backend.ViewModels.Baseline.RespondentIndiaRegisterViewModel) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 10:46:29.176 +05:30 [INF] Respondent registration of Test Respondent is initiated
+2020-12-25 10:47:28.579 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 10:47:29.168 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 10:47:29.170 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 10:47:29.171 +05:30 [INF] Hosting environment: Development
+2020-12-25 10:47:29.173 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 10:47:54.952 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 10:47:55.098 +05:30 [INF] CORS policy execution successful.
+2020-12-25 10:47:55.123 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 172.5009ms
+2020-12-25 10:47:55.147 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 777
+2020-12-25 10:47:55.377 +05:30 [INF] Successfully validated the token.
+2020-12-25 10:47:55.381 +05:30 [INF] CORS policy execution successful.
+2020-12-25 10:47:55.386 +05:30 [INF] Authorization was successful.
+2020-12-25 10:47:55.389 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend)'
+2020-12-25 10:47:55.430 +05:30 [INF] Route matched with {action = "Register", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Register(Guides.Backend.ViewModels.Baseline.RespondentIndiaRegisterViewModel) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 10:47:55.962 +05:30 [INF] Respondent registration of Test Respondent is initiated
+2020-12-25 10:47:57.620 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 10:47:58.621 +05:30 [INF] Executed DbCommand (81ms) [Parameters=[@__email_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdminBlockOn], [t].[AdminResetOn], [t].[Country], [t].[CreatedOn], [t].[DisplayName], [t].[Email], [t].[FailedAttempts], [t].[FullName], [t].[IdentityInformation], [t].[ImageUrl], [t].[IsAdminLocked], [t].[IsLoginLocked], [t].[LastUpdateOn], [t].[LockedOn], [t].[LoginBlockOn], [t].[LoginResetOn], [t].[MobileNumber], [t].[OfficialPosition], [t].[PasswordHash], [t].[PasswordResetOn], [t].[PasswordSalt], [t].[ResetKey], [t].[ResetKeyExpiresOn], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+    FROM [Users] AS [u]
+    WHERE [u].[Email] = @__email_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[UserId], [u0].[RoleId], [r].[Id], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2020-12-25 10:47:58.836 +05:30 [INF] Persistence for respondent registration of Test Respondent is initiated
+2020-12-25 10:47:59.172 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = Int64), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (Size = 4000), @p22='?' (Size = 4000), @p23='?' (DbType = Int32), @p24='?' (DbType = Int32), @p25='?' (DbType = Int32), @p26='?' (DbType = Int64), @p27='?' (DbType = DateTime2), @p28='?' (DbType = Double), @p29='?' (DbType = Double), @p30='?' (DbType = Int32), @p31='?' (DbType = Int32), @p32='?' (DbType = Int32), @p33='?' (DbType = Int64), @p34='?' (DbType = Int64), @p35='?' (DbType = Int64), @p36='?' (DbType = Int32), @p37='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Respondents] ([ANM], [ANMTelephone1], [ANMTelephone2], [AddressLine1], [AddressLine2], [Asha], [AshaTelephone1], [AshaTelephone2], [City], [Country], [DateOfActualEntry], [DeathRecordId], [DietaryBehaviourId], [FullName], [HealthFacility], [HospitalId], [HusbandName], [LossToFollowUpId], [OwnAMobilePhone], [PHC], [Person1], [Person2], [Person3], [PhysicalActivityId], [PostalCode], [PregnancyAndGdmRiskFactorsId], [RCHID], [RegisteredOn], [RegistrationLatitude], [RegistrationLongitude], [SecondaryAccessToMobilePhone], [SecondaryAccessToSmartphone], [SocioDemographicId], [Telephone1], [Telephone2], [Telephone3], [TobaccoAndAlcoholUseId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37);
+SELECT [Id]
+FROM [Respondents]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-12-25 10:47:59.292 +05:30 [INF] Respondent registration of Test Respondent succeeded. Id: 1
+2020-12-25 10:47:59.316 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 10:47:59.370 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend) in 3931.5875ms
+2020-12-25 10:47:59.377 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend)'
+2020-12-25 10:47:59.393 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 777 - 200 780 application/json;+charset=utf-8 4245.3459ms
+2020-12-25 11:18:42.834 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 11:18:43.409 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 11:18:43.418 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 11:18:43.420 +05:30 [INF] Hosting environment: Development
+2020-12-25 11:18:43.421 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 11:18:47.038 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 11:18:47.186 +05:30 [INF] CORS policy execution successful.
+2020-12-25 11:18:47.207 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 170.6868ms
+2020-12-25 11:18:47.233 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 777
+2020-12-25 11:18:47.464 +05:30 [INF] Successfully validated the token.
+2020-12-25 11:18:47.469 +05:30 [INF] CORS policy execution successful.
+2020-12-25 11:18:47.483 +05:30 [INF] Authorization was successful.
+2020-12-25 11:18:47.488 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend)'
+2020-12-25 11:18:47.526 +05:30 [INF] Route matched with {action = "Register", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Register(Guides.Backend.ViewModels.Baseline.RespondentIndiaRegisterViewModel) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 11:18:49.153 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 11:18:49.806 +05:30 [INF] Executed DbCommand (80ms) [Parameters=[@__fullName_0='?' (Size = 4000), @__husbandName_1='?' (Size = 4000), @__addressLine1_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Respondents] AS [r]
+        WHERE (([r].[FullName] = @__fullName_0) AND ([r].[HusbandName] = @__husbandName_1)) AND ([r].[AddressLine1] = @__addressLine1_2)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2020-12-25 11:18:49.848 +05:30 [INF] Prevented duplicate registration of respondent: Test Respondent by: vivekanandpv@outlook.com
+2020-12-25 11:18:50.000 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-12-25 11:18:50.056 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend) in 2518.0471ms
+2020-12-25 11:18:50.063 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend)'
+2020-12-25 11:18:50.079 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 777 - 400 46 application/json;+charset=utf-8 2845.3496ms
+2020-12-25 11:22:03.613 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/4ce30e6b-6254-4458-b6a4-cbb3b7d67ec8-thumbnail.jpg - -
+2020-12-25 11:22:03.876 +05:30 [INF] The file /4ce30e6b-6254-4458-b6a4-cbb3b7d67ec8-thumbnail.jpg was not modified
+2020-12-25 11:22:03.922 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/4ce30e6b-6254-4458-b6a4-cbb3b7d67ec8-thumbnail.jpg - - - 304 - image/jpeg 309.4405ms
+2020-12-25 11:24:00.342 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 11:24:00.359 +05:30 [INF] CORS policy execution successful.
+2020-12-25 11:24:00.368 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 27.2626ms
+2020-12-25 11:24:00.381 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 765
+2020-12-25 11:24:00.395 +05:30 [INF] Successfully validated the token.
+2020-12-25 11:24:00.412 +05:30 [INF] CORS policy execution successful.
+2020-12-25 11:24:00.429 +05:30 [INF] Authorization was successful.
+2020-12-25 11:24:00.444 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend)'
+2020-12-25 11:24:00.462 +05:30 [INF] Route matched with {action = "Register", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Register(Guides.Backend.ViewModels.Baseline.RespondentIndiaRegisterViewModel) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 11:24:00.533 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 11:24:00.550 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__fullName_0='?' (Size = 4000), @__husbandName_1='?' (Size = 4000), @__addressLine1_2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Respondents] AS [r]
+        WHERE (([r].[FullName] = @__fullName_0) AND ([r].[HusbandName] = @__husbandName_1)) AND ([r].[AddressLine1] = @__addressLine1_2)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2020-12-25 11:24:00.584 +05:30 [INF] Prevented duplicate registration of respondent: Test Respondent by: vivekanandpv@outlook.com
+2020-12-25 11:24:00.689 +05:30 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-12-25 11:24:00.695 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend) in 200.1716ms
+2020-12-25 11:24:00.703 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend)'
+2020-12-25 11:24:00.707 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 765 - 400 46 application/json;+charset=utf-8 325.6523ms
+2020-12-25 14:09:35.211 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 14:09:35.904 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 14:09:35.906 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 14:09:35.907 +05:30 [INF] Hosting environment: Development
+2020-12-25 14:09:35.909 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 14:15:50.255 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/4ce30e6b-6254-4458-b6a4-cbb3b7d67ec8-thumbnail.jpg - -
+2020-12-25 14:15:50.462 +05:30 [INF] The file /4ce30e6b-6254-4458-b6a4-cbb3b7d67ec8-thumbnail.jpg was not modified
+2020-12-25 14:15:50.484 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/4ce30e6b-6254-4458-b6a4-cbb3b7d67ec8-thumbnail.jpg - - - 304 - image/jpeg 232.5123ms
+2020-12-25 14:15:59.169 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/undefined - -
+2020-12-25 14:15:59.201 +05:30 [INF] CORS policy execution successful.
+2020-12-25 14:15:59.204 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/undefined - - - 204 - - 35.1155ms
+2020-12-25 14:15:59.212 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/undefined - -
+2020-12-25 14:15:59.502 +05:30 [INF] Successfully validated the token.
+2020-12-25 14:15:59.507 +05:30 [INF] CORS policy execution successful.
+2020-12-25 14:15:59.511 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/undefined - - - 404 0 - 298.4562ms
+2020-12-25 14:16:40.378 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/undefined - -
+2020-12-25 14:16:40.382 +05:30 [INF] CORS policy execution successful.
+2020-12-25 14:16:40.384 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/undefined - - - 204 - - 5.9299ms
+2020-12-25 14:16:40.389 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/undefined - -
+2020-12-25 14:16:40.391 +05:30 [INF] Successfully validated the token.
+2020-12-25 14:16:40.392 +05:30 [INF] CORS policy execution successful.
+2020-12-25 14:16:40.394 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/undefined - - - 404 0 - 4.6771ms
+2020-12-25 14:17:35.402 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/undefined - -
+2020-12-25 14:17:35.413 +05:30 [INF] CORS policy execution successful.
+2020-12-25 14:17:35.416 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/undefined - - - 204 - - 13.4788ms
+2020-12-25 14:17:35.419 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/undefined - -
+2020-12-25 14:17:35.426 +05:30 [INF] Successfully validated the token.
+2020-12-25 14:17:35.428 +05:30 [INF] CORS policy execution successful.
+2020-12-25 14:17:35.438 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/undefined - - - 404 0 - 18.8919ms
+2020-12-25 14:18:25.104 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 14:18:25.114 +05:30 [INF] CORS policy execution successful.
+2020-12-25 14:18:25.116 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 11.4676ms
+2020-12-25 14:18:25.118 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 14:18:25.120 +05:30 [INF] Successfully validated the token.
+2020-12-25 14:18:25.123 +05:30 [INF] CORS policy execution successful.
+2020-12-25 14:18:25.131 +05:30 [INF] Authorization was successful.
+2020-12-25 14:18:25.136 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 14:18:25.200 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 14:18:31.635 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 14:18:32.487 +05:30 [INF] Executed DbCommand (78ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 14:18:32.787 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 14:18:32.944 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 14:18:33.090 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 7879.0872ms
+2020-12-25 14:18:33.096 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 14:18:33.107 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 7988.8979ms
+2020-12-25 14:32:35.118 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 14:32:35.124 +05:30 [INF] CORS policy execution successful.
+2020-12-25 14:32:35.126 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 7.6703ms
+2020-12-25 14:32:35.135 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 14:32:35.137 +05:30 [INF] Successfully validated the token.
+2020-12-25 14:32:35.145 +05:30 [INF] CORS policy execution successful.
+2020-12-25 14:32:35.152 +05:30 [INF] Authorization was successful.
+2020-12-25 14:32:35.162 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 14:32:35.165 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 14:32:35.230 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 14:32:35.346 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 14:32:35.385 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 14:32:35.395 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 14:32:35.409 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 232.1934ms
+2020-12-25 14:32:35.411 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 14:32:35.419 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 283.9129ms
+2020-12-25 15:46:59.189 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 15:46:59.197 +05:30 [INF] CORS policy execution successful.
+2020-12-25 15:46:59.200 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 11.8510ms
+2020-12-25 15:46:59.216 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 15:46:59.226 +05:30 [INF] Successfully validated the token.
+2020-12-25 15:46:59.228 +05:30 [INF] CORS policy execution successful.
+2020-12-25 15:46:59.231 +05:30 [INF] Authorization was successful.
+2020-12-25 15:46:59.233 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 15:46:59.236 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 15:46:59.261 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 15:46:59.405 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 15:46:59.467 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 15:46:59.475 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 15:46:59.486 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 245.1506ms
+2020-12-25 15:46:59.494 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 15:46:59.497 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 281.2657ms
+2020-12-25 15:51:02.579 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - -
+2020-12-25 15:51:02.594 +05:30 [INF] CORS policy execution successful.
+2020-12-25 15:51:02.598 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/ - - - 204 - - 19.1053ms
+2020-12-25 15:51:02.605 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 628
+2020-12-25 15:51:02.620 +05:30 [INF] Successfully validated the token.
+2020-12-25 15:51:02.635 +05:30 [INF] CORS policy execution successful.
+2020-12-25 15:51:02.638 +05:30 [INF] Authorization was successful.
+2020-12-25 15:51:02.654 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend)'
+2020-12-25 15:51:02.670 +05:30 [INF] Route matched with {action = "Register", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Register(Guides.Backend.ViewModels.Baseline.RespondentIndiaRegisterViewModel) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 15:51:02.774 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-12-25 15:51:02.816 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend) in 119.7885ms
+2020-12-25 15:51:02.821 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Register (Guides.Backend)'
+2020-12-25 15:51:02.826 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/ application/json 628 - 400 257 application/problem+json;+charset=utf-8 221.2027ms
+2020-12-25 15:58:36.042 +05:30 [INF] User profile is available. Using 'C:\Users\vivek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-12-25 15:58:36.677 +05:30 [INF] Now listening on: http://localhost:5015
+2020-12-25 15:58:36.680 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2020-12-25 15:58:36.681 +05:30 [INF] Hosting environment: Development
+2020-12-25 15:58:36.683 +05:30 [INF] Content root path: C:\Users\vivek\source\repos\Guides.Backend
+2020-12-25 16:01:29.359 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:01:29.554 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:01:29.579 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 220.6091ms
+2020-12-25 16:01:29.600 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:01:29.967 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:01:29.973 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:01:29.983 +05:30 [INF] Authorization was successful.
+2020-12-25 16:01:29.987 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:01:30.029 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:01:31.789 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:01:32.639 +05:30 [INF] Executed DbCommand (63ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:01:33.020 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:01:33.120 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:01:33.252 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 3209.3417ms
+2020-12-25 16:01:33.259 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:01:33.272 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 3672.3817ms
+2020-12-25 16:02:55.260 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india//undefined - -
+2020-12-25 16:02:55.267 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:02:55.270 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india//undefined - - - 204 - - 10.0462ms
+2020-12-25 16:02:55.290 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india//undefined application/json 628
+2020-12-25 16:02:55.320 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:02:55.324 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:02:55.340 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india//undefined application/json 628 - 404 0 - 49.7063ms
+2020-12-25 16:04:00.999 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:04:01.000 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:04:01.002 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 3.6060ms
+2020-12-25 16:04:01.017 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:04:01.019 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:04:01.025 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:04:01.028 +05:30 [INF] Authorization was successful.
+2020-12-25 16:04:01.040 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:04:01.044 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:04:01.162 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:04:01.209 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:04:01.275 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:04:01.287 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:04:01.290 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 213.4156ms
+2020-12-25 16:04:01.293 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:04:01.295 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 278.1970ms
+2020-12-25 16:04:37.975 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:04:37.982 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:04:37.984 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 9.7361ms
+2020-12-25 16:04:37.997 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:04:38.000 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:04:38.002 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:04:38.013 +05:30 [INF] Authorization was successful.
+2020-12-25 16:04:38.016 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:04:38.018 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:04:38.042 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:04:38.058 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:04:38.101 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:04:38.170 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:04:38.184 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 159.8827ms
+2020-12-25 16:04:38.212 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:04:38.229 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 231.2876ms
+2020-12-25 16:04:56.132 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:04:56.134 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:04:56.137 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 4.9436ms
+2020-12-25 16:04:56.147 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:04:56.155 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:04:56.163 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:04:56.168 +05:30 [INF] Authorization was successful.
+2020-12-25 16:04:56.178 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:04:56.185 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:04:56.210 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:04:56.228 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:04:56.305 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:04:56.313 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:04:56.316 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 106.9639ms
+2020-12-25 16:04:56.319 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:04:56.331 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 183.8673ms
+2020-12-25 16:05:03.875 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:05:03.877 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:05:03.880 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 5.4067ms
+2020-12-25 16:05:03.890 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:05:03.894 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:05:03.905 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:05:03.923 +05:30 [INF] Authorization was successful.
+2020-12-25 16:05:03.936 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:05:03.940 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:05:03.953 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:05:03.989 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:05:04.044 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:05:04.064 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:05:04.068 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 116.0309ms
+2020-12-25 16:05:04.080 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:05:04.084 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 193.8195ms
+2020-12-25 16:08:05.916 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india//1 - -
+2020-12-25 16:08:05.920 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:08:05.922 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india//1 - - - 204 - - 5.6388ms
+2020-12-25 16:08:05.929 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india//1 application/json 625
+2020-12-25 16:08:05.938 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:08:05.939 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:08:05.956 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india//1 application/json 625 - 404 0 - 26.7388ms
+2020-12-25 16:09:39.273 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:09:39.289 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:09:39.292 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 18.2011ms
+2020-12-25 16:09:39.309 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:09:39.311 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:09:39.316 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:09:39.326 +05:30 [INF] Authorization was successful.
+2020-12-25 16:09:39.332 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:09:39.342 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:09:39.360 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:09:39.422 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:09:39.476 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:09:39.485 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:09:39.488 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 129.3225ms
+2020-12-25 16:09:39.491 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:09:39.495 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 185.9698ms
+2020-12-25 16:10:10.025 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:10:10.038 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:10:10.040 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 15.3337ms
+2020-12-25 16:10:10.043 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:10:10.046 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:10:10.057 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:10:10.061 +05:30 [INF] Authorization was successful.
+2020-12-25 16:10:10.071 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:10:10.073 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:10:10.084 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:10:10.109 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:10:10.169 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:10:10.177 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:10:10.181 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 97.5208ms
+2020-12-25 16:10:10.193 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:10:10.206 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 163.0154ms
+2020-12-25 16:11:23.916 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/1 - -
+2020-12-25 16:11:23.953 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:11:23.957 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/1 - - - 204 - - 40.1150ms
+2020-12-25 16:11:23.971 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/1/1 application/json 625
+2020-12-25 16:11:23.983 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:11:23.999 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:11:24.015 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/1/1 application/json 625 - 404 0 - 44.0585ms
+2020-12-25 16:11:48.190 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:11:48.268 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:11:48.271 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 80.9091ms
+2020-12-25 16:11:48.313 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:11:48.326 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:11:48.414 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:11:48.424 +05:30 [INF] Authorization was successful.
+2020-12-25 16:11:48.426 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:11:48.453 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:11:48.484 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:11:48.567 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:11:48.645 +05:30 [INF] Executed DbCommand (40ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:11:48.655 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:11:48.658 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 174.9959ms
+2020-12-25 16:11:48.674 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:11:48.677 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 364.3262ms
+2020-12-25 16:12:39.558 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:12:39.572 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:12:39.574 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 16.6710ms
+2020-12-25 16:12:39.577 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:12:39.579 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:12:39.581 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:12:39.583 +05:30 [INF] Authorization was successful.
+2020-12-25 16:12:39.585 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:12:39.595 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:12:39.612 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:12:39.666 +05:30 [INF] Executed DbCommand (38ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:12:39.711 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:12:39.731 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:12:39.735 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 123.9054ms
+2020-12-25 16:12:39.750 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:12:39.753 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 176.1217ms
+2020-12-25 16:12:56.422 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:12:56.424 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:12:56.426 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1/ - - - 204 - - 4.0133ms
+2020-12-25 16:12:56.434 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - -
+2020-12-25 16:12:56.436 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:12:56.438 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:12:56.440 +05:30 [INF] Authorization was successful.
+2020-12-25 16:12:56.442 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:12:56.459 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:12:56.475 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:12:56.503 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:12:56.533 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:12:56.543 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:12:56.548 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 73.6059ms
+2020-12-25 16:12:56.552 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:12:56.572 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1/ - - - 200 780 application/json;+charset=utf-8 137.4744ms
+2020-12-25 16:13:08.489 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:13:08.491 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:13:08.493 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - - - 204 - - 4.3206ms
+2020-12-25 16:13:08.496 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:13:08.501 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:13:08.503 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:13:08.506 +05:30 [INF] Authorization was successful.
+2020-12-25 16:13:08.509 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:13:08.518 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:13:08.534 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:13:08.560 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:13:08.615 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:13:08.634 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:13:08.648 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 114.5253ms
+2020-12-25 16:13:08.656 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:13:08.708 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1 - - - 200 780 application/json;+charset=utf-8 211.5842ms
+2020-12-25 16:13:38.036 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:13:38.049 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:13:38.051 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - - - 204 - - 15.4514ms
+2020-12-25 16:13:38.062 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:13:38.064 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:13:38.079 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:13:38.081 +05:30 [INF] Authorization was successful.
+2020-12-25 16:13:38.093 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:13:38.096 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:13:38.122 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:13:38.145 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:13:38.202 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:13:38.209 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:13:38.213 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 91.7301ms
+2020-12-25 16:13:38.225 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:13:38.228 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1 - - - 200 780 application/json;+charset=utf-8 166.5120ms
+2020-12-25 16:14:57.889 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:14:57.904 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:14:57.908 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - - - 204 - - 18.4368ms
+2020-12-25 16:14:57.917 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5015/api/respondents/india/1 application/json 625
+2020-12-25 16:14:57.931 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:14:57.933 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:14:57.951 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2020-12-25 16:14:57.965 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2020-12-25 16:14:57.969 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5015/api/respondents/india/1 application/json 625 - 405 0 - 51.9305ms
+2020-12-25 16:15:47.181 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:15:47.216 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:15:47.218 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - - - 204 - - 37.0697ms
+2020-12-25 16:15:47.228 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:15:47.230 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:15:47.243 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:15:47.245 +05:30 [INF] Authorization was successful.
+2020-12-25 16:15:47.260 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:15:47.267 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:15:47.294 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:15:47.330 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:15:47.378 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:15:47.387 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:15:47.390 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 97.3719ms
+2020-12-25 16:15:47.404 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:15:47.407 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1 - - - 200 780 application/json;+charset=utf-8 178.9433ms
+2020-12-25 16:15:49.067 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:15:49.071 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:15:49.073 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:15:49.075 +05:30 [INF] Authorization was successful.
+2020-12-25 16:15:49.077 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:15:49.080 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:15:49.086 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:15:49.125 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:15:49.146 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:15:49.157 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:15:49.161 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 75.4116ms
+2020-12-25 16:15:49.164 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:15:49.166 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1 - - - 200 780 application/json;+charset=utf-8 99.6626ms
+2020-12-25 16:16:48.337 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:16:48.350 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:16:48.358 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - - - 204 - - 20.8623ms
+2020-12-25 16:16:48.366 +05:30 [INF] Request starting HTTP/1.1 PUT http://localhost:5015/api/respondents/india/1 application/json 625
+2020-12-25 16:16:48.378 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:16:48.380 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:16:48.398 +05:30 [INF] Authorization was successful.
+2020-12-25 16:16:48.412 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Update (Guides.Backend)'
+2020-12-25 16:16:48.437 +05:30 [INF] Route matched with {action = "Update", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Update(Int32, Guides.Backend.ViewModels.Baseline.RespondentIndiaUpdateViewModel) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:16:48.547 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:16:48.562 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:16:48.742 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__email_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AdminBlockOn], [t].[AdminResetOn], [t].[Country], [t].[CreatedOn], [t].[DisplayName], [t].[Email], [t].[FailedAttempts], [t].[FullName], [t].[IdentityInformation], [t].[ImageUrl], [t].[IsAdminLocked], [t].[IsLoginLocked], [t].[LastUpdateOn], [t].[LockedOn], [t].[LoginBlockOn], [t].[LoginResetOn], [t].[MobileNumber], [t].[OfficialPosition], [t].[PasswordHash], [t].[PasswordResetOn], [t].[PasswordSalt], [t].[ResetKey], [t].[ResetKeyExpiresOn], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+    FROM [Users] AS [u]
+    WHERE [u].[Email] = @__email_0
+) AS [t]
+LEFT JOIN (
+    SELECT [u0].[UserId], [u0].[RoleId], [r].[Id], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2020-12-25 16:16:48.790 +05:30 [INF] Respondent data update initiated for id: 1 by vivekanandpv@outlook.com
+2020-12-25 16:16:48.964 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@p38='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = Int64), @p2='?' (DbType = Int64), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int64), @p7='?' (DbType = Int64), @p8='?' (Size = 4000), @p9='?' (DbType = Int32), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Int32), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (Size = 4000), @p22='?' (Size = 4000), @p23='?' (DbType = Int32), @p24='?' (DbType = Int32), @p25='?' (DbType = Int32), @p26='?' (DbType = Int64), @p27='?' (DbType = DateTime2), @p28='?' (DbType = Double), @p29='?' (DbType = Double), @p30='?' (DbType = Int32), @p31='?' (DbType = Int32), @p32='?' (DbType = Int32), @p33='?' (DbType = Int64), @p34='?' (DbType = Int64), @p35='?' (DbType = Int64), @p36='?' (DbType = Int32), @p37='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Respondents] SET [ANM] = @p0, [ANMTelephone1] = @p1, [ANMTelephone2] = @p2, [AddressLine1] = @p3, [AddressLine2] = @p4, [Asha] = @p5, [AshaTelephone1] = @p6, [AshaTelephone2] = @p7, [City] = @p8, [Country] = @p9, [DateOfActualEntry] = @p10, [DeathRecordId] = @p11, [DietaryBehaviourId] = @p12, [FullName] = @p13, [HealthFacility] = @p14, [HospitalId] = @p15, [HusbandName] = @p16, [LossToFollowUpId] = @p17, [OwnAMobilePhone] = @p18, [PHC] = @p19, [Person1] = @p20, [Person2] = @p21, [Person3] = @p22, [PhysicalActivityId] = @p23, [PostalCode] = @p24, [PregnancyAndGdmRiskFactorsId] = @p25, [RCHID] = @p26, [RegisteredOn] = @p27, [RegistrationLatitude] = @p28, [RegistrationLongitude] = @p29, [SecondaryAccessToMobilePhone] = @p30, [SecondaryAccessToSmartphone] = @p31, [SocioDemographicId] = @p32, [Telephone1] = @p33, [Telephone2] = @p34, [Telephone3] = @p35, [TobaccoAndAlcoholUseId] = @p36, [UserId] = @p37
+WHERE [Id] = @p38;
+SELECT @@ROWCOUNT;
+2020-12-25 16:16:49.023 +05:30 [INF] Respondent data update completed for id: 1 by vivekanandpv@outlook.com
+2020-12-25 16:16:49.027 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:16:49.033 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Update (Guides.Backend) in 566.0888ms
+2020-12-25 16:16:49.038 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Update (Guides.Backend)'
+2020-12-25 16:16:49.048 +05:30 [INF] Request finished HTTP/1.1 PUT http://localhost:5015/api/respondents/india/1 application/json 625 - 200 789 application/json;+charset=utf-8 681.5890ms
+2020-12-25 16:17:08.234 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:17:08.261 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:17:08.264 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - - - 204 - - 30.0532ms
+2020-12-25 16:17:08.272 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:17:08.278 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:17:08.280 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:17:08.281 +05:30 [INF] Authorization was successful.
+2020-12-25 16:17:08.288 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:17:08.296 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:17:08.319 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:17:08.398 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:17:08.459 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:17:08.466 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:17:08.480 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 162.1349ms
+2020-12-25 16:17:08.482 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:17:08.485 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1 - - - 200 789 application/json;+charset=utf-8 213.1972ms
+2020-12-25 16:17:50.052 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:17:50.053 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:17:50.055 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5015/api/respondents/india/1 - - - 204 - - 3.3382ms
+2020-12-25 16:17:50.063 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/api/respondents/india/1 - -
+2020-12-25 16:17:50.066 +05:30 [INF] Successfully validated the token.
+2020-12-25 16:17:50.067 +05:30 [INF] CORS policy execution successful.
+2020-12-25 16:17:50.069 +05:30 [INF] Authorization was successful.
+2020-12-25 16:17:50.071 +05:30 [INF] Executing endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:17:50.079 +05:30 [INF] Route matched with {action = "Get", controller = "Respondents"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel]] Get(Int32) on controller Guides.Backend.Controllers.India.RespondentsController (Guides.Backend).
+2020-12-25 16:17:50.095 +05:30 [INF] Entity Framework Core 5.0.1 initialized 'GuidesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: using lazy-loading proxies 
+2020-12-25 16:17:50.168 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ANM], [r].[ANMTelephone1], [r].[ANMTelephone2], [r].[AddressLine1], [r].[AddressLine2], [r].[Asha], [r].[AshaTelephone1], [r].[AshaTelephone2], [r].[City], [r].[Country], [r].[DateOfActualEntry], [r].[DeathRecordId], [r].[DietaryBehaviourId], [r].[FullName], [r].[HealthFacility], [r].[HospitalId], [r].[HusbandName], [r].[LossToFollowUpId], [r].[OwnAMobilePhone], [r].[PHC], [r].[Person1], [r].[Person2], [r].[Person3], [r].[PhysicalActivityId], [r].[PostalCode], [r].[PregnancyAndGdmRiskFactorsId], [r].[RCHID], [r].[RegisteredOn], [r].[RegistrationLatitude], [r].[RegistrationLongitude], [r].[SecondaryAccessToMobilePhone], [r].[SecondaryAccessToSmartphone], [r].[SocioDemographicId], [r].[Telephone1], [r].[Telephone2], [r].[Telephone3], [r].[TobaccoAndAlcoholUseId], [r].[UserId]
+FROM [Respondents] AS [r]
+WHERE [r].[Id] = @__id_0
+2020-12-25 16:17:50.227 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[AdminBlockOn], [u].[AdminResetOn], [u].[Country], [u].[CreatedOn], [u].[DisplayName], [u].[Email], [u].[FailedAttempts], [u].[FullName], [u].[IdentityInformation], [u].[ImageUrl], [u].[IsAdminLocked], [u].[IsLoginLocked], [u].[LastUpdateOn], [u].[LockedOn], [u].[LoginBlockOn], [u].[LoginResetOn], [u].[MobileNumber], [u].[OfficialPosition], [u].[PasswordHash], [u].[PasswordResetOn], [u].[PasswordSalt], [u].[ResetKey], [u].[ResetKeyExpiresOn]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-12-25 16:17:50.236 +05:30 [INF] Executing OkObjectResult, writing value of type 'Guides.Backend.ViewModels.Baseline.RespondentIndiaListViewModel'.
+2020-12-25 16:17:50.240 +05:30 [INF] Executed action Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend) in 145.6598ms
+2020-12-25 16:17:50.257 +05:30 [INF] Executed endpoint 'Guides.Backend.Controllers.India.RespondentsController.Get (Guides.Backend)'
+2020-12-25 16:17:50.259 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/api/respondents/india/1 - - - 200 789 application/json;+charset=utf-8 195.6160ms
+2020-12-25 17:13:23.405 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/swagger/index.html - -
+2020-12-25 17:13:23.475 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/swagger/index.html - - - 200 - text/html;charset=utf-8 69.5017ms
+2020-12-25 17:13:23.532 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/swagger/swagger-ui.css - -
+2020-12-25 17:13:23.570 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2020-12-25 17:13:23.575 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/swagger/swagger-ui.css - - - 200 142933 text/css 42.6804ms
+2020-12-25 17:13:24.133 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/swagger/v1/swagger.json - -
+2020-12-25 17:13:24.161 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5015/swagger/favicon-32x32.png - -
+2020-12-25 17:13:24.165 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2020-12-25 17:13:24.171 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/swagger/favicon-32x32.png - - - 200 628 image/png 10.3245ms
+2020-12-25 17:13:24.295 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5015/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 162.1848ms

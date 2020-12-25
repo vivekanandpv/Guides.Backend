@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Guides.Backend.Controllers.General
 {
+    [Authorize(Roles = GeneralStaticDataProvider.GeneralAdministratorRoles)]
     [Route(EndpointStaticStore.AuthGeneralTemplate)]
     [ApiController]
     public class AuthGeneralController : ControllerBase
@@ -18,12 +19,14 @@ namespace Guides.Backend.Controllers.General
             this._authService = authServiceFactory.GetMaster();
         }
         
+        [AllowAnonymous]
         [HttpPost(EndpointStaticStore.Login)]
         public async Task<ActionResult<AuthTokenViewModel>> Login(AuthLoginViewModel viewModel)
         {
             return await this._authService.Login(viewModel);
         }
         
+        [AllowAnonymous]
         [HttpPost(EndpointStaticStore.ResetPassword)]
         public async Task<IActionResult> ResetPassword(AuthResetPasswordViewModel viewModel)
         {
@@ -31,7 +34,7 @@ namespace Guides.Backend.Controllers.General
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
+        
         [HttpPost(EndpointStaticStore.ChangePassword)]
         public async Task<IActionResult> ChangePassword(AuthChangePasswordViewModel viewModel)
         {
@@ -39,14 +42,12 @@ namespace Guides.Backend.Controllers.General
             return Ok();
         }
 
-        [Authorize(policy: GeneralStaticDataProvider.GeneralAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.Register)]
         public async Task<ActionResult<AuthResetKeyViewModel>> Register(AuthRegisterViewModel viewModel)
         {
             return await this._authService.Register(viewModel);
         }
         
-        [Authorize(policy: GeneralStaticDataProvider.GeneralAdministratorPolicy)]
         [HttpPut(EndpointStaticStore.Update)]
         public async Task<ActionResult> Update(AuthUpdateViewModel viewModel)
         {
@@ -54,7 +55,6 @@ namespace Guides.Backend.Controllers.General
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.AdminBlock)]
         public async Task<IActionResult> AdminBlock(AuthAdminActionViewModel viewModel)
         {
@@ -62,14 +62,12 @@ namespace Guides.Backend.Controllers.General
             return Ok();
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.AdminReset)]
         public async Task<ActionResult<AuthResetKeyViewModel>> AdminReset(AuthAdminActionViewModel viewModel)
         {
             return await this._authService.AdminReset(viewModel);
         }
         
-        [Authorize(policy:GeneralStaticDataProvider.GeneralAdministratorPolicy)]
         [HttpPost(EndpointStaticStore.LoginReset)]
         public async Task<ActionResult<AuthResetKeyViewModel>> LoginReset(AuthAdminActionViewModel viewModel)
         {

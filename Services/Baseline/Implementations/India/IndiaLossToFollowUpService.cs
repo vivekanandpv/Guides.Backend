@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Guides.Backend.Domain;
+using Guides.Backend.Exceptions;
 using Guides.Backend.Exceptions.Auth;
 using Guides.Backend.Exceptions.Domain;
 using Guides.Backend.Repositories.Auth;
@@ -88,12 +89,6 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
                 this._logger.LogInformation($"Prevented registration of loss to follow-up (India) for deceased respondent RID: {viewModel.RespondentId}");
                 throw new UserActionPreventedException();
             }
-            
-            if (respondent.LossToFollowUp != null)
-            {
-                this._logger.LogInformation($"Prevented registration of loss to follow-up (India) for blocked respondent RID: {viewModel.RespondentId}");
-                throw new UserActionPreventedException();
-            }
 
             if (respondent.User.Country != Country.India)
             {
@@ -104,7 +99,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
             if (respondent.LossToFollowUp != null)
             {
                 this._logger.LogInformation($"Prevented duplicate registration of loss to follow-up (India) for RID: {viewModel.RespondentId}");
-                throw new UserActionPreventedException();
+                throw new DuplicatePreventionException();
             }
             
             model.Respondent = respondent;
@@ -149,7 +144,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
 
             var createdBy = modelDb.RegisteredBy;
 
-            var roleIntersection = roles.Intersect(GeneralStaticDataProvider.IndiaAdministratorGroup);
+            var roleIntersection = roles.Intersect(GeneralStaticDataProvider.IndiaAdministratorRoles.Split(','));
             
             if (createdBy == initiatedBy || roleIntersection.Any())
             {

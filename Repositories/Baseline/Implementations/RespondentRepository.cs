@@ -37,5 +37,13 @@ namespace Guides.Backend.Repositories.Baseline.Implementations
             this._context.Update(entity);
             await this._context.SaveChangesAsync();
         }
+
+        public async Task<bool> IsDuplicate(string fullName, string husbandName, string addressLine1)
+        {
+            return await this._context.Respondents.AnyAsync(r =>
+                r.FullName == fullName 
+                && r.HusbandName == husbandName 
+                && r.AddressLine1 == addressLine1);
+        }
     }
 }

@@ -97,6 +97,7 @@ namespace Guides.Backend.ViewModels.Auth
         public string Email { get; set; }
         public string DisplayName { get; set; }
         public string ProfilePhotographUrl { get; set; }
+        public string Country { get; set; }
         public string[] Roles { get; set; }
     }
     

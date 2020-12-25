@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Guides.Backend.Domain;
+using Guides.Backend.Exceptions;
 using Guides.Backend.Exceptions.Auth;
 using Guides.Backend.Exceptions.Domain;
 using Guides.Backend.Repositories.Auth;
@@ -67,6 +68,12 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
                 this._logger.LogInformation($"Prevented registration of respondent as user discrepancy found registration data: {viewModel.RegisteredBy}; auth system: {initiatedBy}");
                 throw new UserActionNotSupportedException();
             }
+
+            if (await this._repository.IsDuplicate(viewModel.FullName, viewModel.HusbandName, viewModel.AddressLine1))
+            {
+                this._logger.LogInformation($"Prevented duplicate registration of respondent: {viewModel.FullName} by: {initiatedBy}");
+                throw new DuplicatePreventionException();
+            }
             
             this._logger.LogInformation($"Respondent registration of {viewModel.FullName} is initiated");
             var respondent = this._mapper.Map<RespondentIndiaRegisterViewModel, Respondent>(viewModel);
@@ -103,7 +110,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
 
             var createdBy = respondentDb.User.Email;
 
-            var roleIntersection = roles.Intersect(GeneralStaticDataProvider.IndiaAdministratorGroup);
+            var roleIntersection = roles.Intersect(GeneralStaticDataProvider.IndiaAdministratorRoles.Split(','));
             
             if (respondentDb.User.Email == initiatedBy || roleIntersection.Any())
             {

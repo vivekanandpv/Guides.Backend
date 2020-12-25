@@ -49,6 +49,15 @@ namespace Guides.Backend.Filters
                 context.ExceptionHandled = true;
             }
             
+            if (context.Exception is DuplicatePreventionException)
+            {
+                context.Result = new ObjectResult(new { Message = "This form is already registered" })
+                {
+                    StatusCode = HttpStatusCodeStore.BadRequest
+                };
+                context.ExceptionHandled = true;
+            }
+            
             if (context.Exception is ServiceNotAvailableException)
             {
                 context.Result = new ObjectResult(new { Message = "Could not process your request" })

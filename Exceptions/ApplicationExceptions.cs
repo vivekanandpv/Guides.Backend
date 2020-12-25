@@ -8,4 +8,8 @@ namespace Guides.Backend.Exceptions
     public class ServiceNotAvailableException : Exception
     {
     }
+    
+    public class DuplicatePreventionException : Exception
+    {
+    }
 }

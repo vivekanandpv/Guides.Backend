@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Guides.Backend.Domain;
+using Guides.Backend.Exceptions;
 using Guides.Backend.Exceptions.Auth;
 using Guides.Backend.Exceptions.Domain;
 using Guides.Backend.Repositories.Auth;
@@ -89,12 +90,6 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
                 throw new UserActionPreventedException();
             }
             
-            if (respondent.LossToFollowUp != null)
-            {
-                this._logger.LogInformation($"Prevented registration of loss to follow-up (Uganda) for blocked respondent RID: {viewModel.RespondentId}");
-                throw new UserActionPreventedException();
-            }
-
             if (respondent.User.Country != Country.Uganda)
             {
                 this._logger.LogInformation($"Prevented cross-region registration of loss to follow-up (Uganda) for RID: {viewModel.RespondentId}");
@@ -104,7 +99,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
             if (respondent.LossToFollowUp != null)
             {
                 this._logger.LogInformation($"Prevented duplicate registration of loss to follow-up (Uganda) for RID: {viewModel.RespondentId}");
-                throw new UserActionPreventedException();
+                throw new DuplicatePreventionException();
             }
             
             model.Respondent = respondent;
@@ -149,7 +144,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
 
             var createdBy = modelDb.RegisteredBy;
 
-            var roleIntersection = roles.Intersect(GeneralStaticDataProvider.UgandaAdministratorGroup);
+            var roleIntersection = roles.Intersect(GeneralStaticDataProvider.UgandaAdministratorRoles.Split(','));
             
             if (createdBy == initiatedBy || roleIntersection.Any())
             {

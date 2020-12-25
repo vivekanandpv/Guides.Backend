@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Guides.Backend.Domain;
+using Guides.Backend.Exceptions;
 using Guides.Backend.Exceptions.Auth;
 using Guides.Backend.Exceptions.Domain;
 using Guides.Backend.Repositories.Auth;
@@ -68,6 +69,12 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
                 throw new UserActionNotSupportedException();
             }
             
+            if (await this._repository.IsDuplicate(viewModel.FullName, viewModel.HusbandName, viewModel.AddressLine1))
+            {
+                this._logger.LogInformation($"Prevented duplicate registration of respondent: {viewModel.FullName} by: {initiatedBy}");
+                throw new DuplicatePreventionException();
+            }
+            
             this._logger.LogInformation($"Respondent registration of {viewModel.FullName} is initiated");
             var respondent = this._mapper.Map<RespondentUgandaRegisterViewModel, Respondent>(viewModel);
             respondent.Country = Country.Uganda;
@@ -103,7 +110,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
 
             var createdBy = respondentDb.User.Email;
 
-            var roleIntersection = roles.Intersect(GeneralStaticDataProvider.UgandaAdministratorGroup);
+            var roleIntersection = roles.Intersect(GeneralStaticDataProvider.UgandaAdministratorRoles.Split(','));
             
             if (respondentDb.User.Email == initiatedBy || roleIntersection.Any())
             {

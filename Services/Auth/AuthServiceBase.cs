@@ -75,6 +75,7 @@ namespace Guides.Backend.Services.Auth
                         Email = viewModel.Username,
                         DisplayName = userDb.DisplayName,
                         ProfilePhotographUrl = userDb.ImageUrl,
+                        Country = userDb.Country.ToString(),
                         Roles = _repository.GetRolesForUser(userDb)
                     })
                 };
@@ -444,18 +445,19 @@ namespace Guides.Backend.Services.Auth
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Email, viewModel.Email),
-                new Claim(ClaimTypes.Name, viewModel.DisplayName),
+                new Claim("email", viewModel.Email),
+                new Claim("displayName", viewModel.DisplayName),
+                new Claim("country", viewModel.Country),
             };
             
             if (!string.IsNullOrWhiteSpace(viewModel.ProfilePhotographUrl))
             {
-                claims.Add(new Claim("ImageUrl", viewModel.ProfilePhotographUrl));
+                claims.Add(new Claim("imageUrl", viewModel.ProfilePhotographUrl));
             }
 
             foreach (var role in viewModel.Roles)
             {
-                claims.Add(new Claim("Roles", role));
+                claims.Add(new Claim("roles", role));
             }
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(GeneralStaticDataProvider.GuidesEncryptionKey));
@@ -619,9 +621,9 @@ namespace Guides.Backend.Services.Auth
 
         private bool IsRoleAnAdministrator(string role)
         {
-            return GeneralStaticDataProvider.GeneralAdministratorGroup.Any(r => r == role)
-                   || GeneralStaticDataProvider.IndiaAdministratorGroup.Any(r => r == role)
-                   || GeneralStaticDataProvider.UgandaAdministratorGroup.Any(r => r == role);
+            return GeneralStaticDataProvider.GeneralAdministratorRoles.Split(',').Any(r => r == role)
+                   || GeneralStaticDataProvider.IndiaAdministratorRoles.Split(',').Any(r => r == role)
+                   || GeneralStaticDataProvider.UgandaAdministratorRoles.Split(',').Any(r => r == role);
         }
         
         private static async Task StoreImage(string base64String, string path)

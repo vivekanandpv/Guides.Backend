@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Guides.Backend.Domain;
+using Guides.Backend.Exceptions;
 using Guides.Backend.Exceptions.Auth;
 using Guides.Backend.Exceptions.Domain;
 using Guides.Backend.Repositories.Auth;
@@ -103,7 +104,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
             if (respondent.SocioDemographic != null)
             {
                 this._logger.LogInformation($"Prevented duplicate registration of socio-demographic (Uganda) for RID: {viewModel.RespondentId}");
-                throw new UserActionPreventedException();
+                throw new DuplicatePreventionException();
             }
             
             model.Respondent = respondent;
@@ -147,7 +148,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
 
             var createdBy = modelDb.RegisteredBy;
 
-            var roleIntersection = roles.Intersect(GeneralStaticDataProvider.UgandaAdministratorGroup);
+            var roleIntersection = roles.Intersect(GeneralStaticDataProvider.UgandaAdministratorRoles.Split(','));
             
             if (createdBy == initiatedBy || roleIntersection.Any())
             {
