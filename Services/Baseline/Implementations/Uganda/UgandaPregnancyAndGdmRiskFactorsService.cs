@@ -130,7 +130,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
             
             var respondentDb = await this._respondentRepository.Get(id);
             
-            if (respondentDb?.SocioDemographic == null)
+            if (respondentDb?.PhysicalActivity == null)
             {
                 this._logger.LogInformation($"Pregnancy and GDM risk factors (Uganda): Record not found for RID: {viewModel.RespondentId}");
                 throw new RecordNotFoundException();

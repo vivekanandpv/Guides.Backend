@@ -130,7 +130,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
             
             var respondentDb = await this._respondentRepository.Get(id);
             
-            if (respondentDb?.SocioDemographic == null)
+            if (respondentDb?.DietaryBehaviour == null)
             {
                 this._logger.LogInformation($"Dietary behaviour (India): Record not found for RID: {viewModel.RespondentId}");
                 throw new RecordNotFoundException();

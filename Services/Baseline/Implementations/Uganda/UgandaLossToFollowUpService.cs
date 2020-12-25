@@ -124,7 +124,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
             
             var respondentDb = await this._respondentRepository.Get(id);
             
-            if (respondentDb?.SocioDemographic == null)
+            if (respondentDb?.LossToFollowUp == null)
             {
                 this._logger.LogInformation($"Loss to follow-up (Uganda): Record not found for RID: {viewModel.RespondentId}");
                 throw new RecordNotFoundException();
