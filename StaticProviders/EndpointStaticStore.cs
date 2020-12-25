@@ -10,11 +10,11 @@
         public const string RespondentsIndiaTemplate = "api/respondents/india";
         public const string RespondentsUgandaTemplate = "api/respondents/uganda";
 
-        public const string SocioDemographicIndiaTemplate = "api/soio-demographic/india";
-        public const string SocioDemographicUgandaTemplate = "api/soio-demographic/uganda";
+        public const string SocioDemographicIndiaTemplate = "api/socio-demographic/india";
+        public const string SocioDemographicUgandaTemplate = "api/socio-demographic/uganda";
 
-        public const string PregnancyAndGdmRiskFactorsIndiaTemplate = "api/pegnancy-and-gdm-risk-factors/india";
-        public const string PregnancyAndGdmRiskFactorsUgandaTemplate = "api/pegnancy-and-gdm-risk-factors/uganda";
+        public const string PregnancyAndGdmRiskFactorsIndiaTemplate = "api/pregnancy-and-gdm-risk-factors/india";
+        public const string PregnancyAndGdmRiskFactorsUgandaTemplate = "api/pregnancy-and-gdm-risk-factors/uganda";
 
         public const string TobaccoAndAlcoholUseIndiaTemplate = "api/tobacco-and-alcohol-use/india";
         public const string TobaccoAndAlcoholUseUgandaTemplate = "api/tobacco-and-alcohol-use/uganda";
