@@ -177,6 +177,7 @@ namespace Guides.Backend.Domain
         public int Gravida { get; set; }
         public int? Parity { get; set; }
         public int? Living { get; set; }
+        public int? Stillbirth { get; set; }
         public GeneralTriplet PreviousBabyWeightOver4kg { get; set; }
         public GeneralTriplet BabySizeLargerThanAverage { get; set; }
         public int? MonthsFromLastDelivery { get; set; }
@@ -222,18 +223,22 @@ namespace Guides.Backend.Domain
         public double? RegistrationLongitude { get; set; }
         
         //  Domain
+        public bool VigorousActivities { get; set; }
         public int? VigorousActivityDaysPerWeek { get; set; }
         public int? VigorousActivityHoursPerDay { get; set; }
         public int? VigorousActivityMinutesPerDay { get; set; }
         
+        public bool ModerateActivities { get; set; }
         public int? ModerateActivityDaysPerWeek { get; set; }
         public int? ModerateActivityHoursPerDay { get; set; }
         public int? ModerateActivityMinutesPerDay { get; set; }
-        
+
+        public bool WalkingActivities { get; set; }
         public int? WalkingDaysPerWeek { get; set; }
         public int? WalkingHoursPerDay { get; set; }
         public int? WalkingMinutesPerDay { get; set; }
-        
+
+        public bool SittingActivities { get; set; }
         public int? SittingDaysPerWeek { get; set; }
         public int? SittingHoursPerDay { get; set; }
         public int? SittingMinutesPerDay { get; set; }

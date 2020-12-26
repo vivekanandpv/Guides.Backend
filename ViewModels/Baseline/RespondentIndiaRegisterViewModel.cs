@@ -187,12 +187,15 @@ namespace Guides.Backend.ViewModels.Baseline
 
     public abstract class PregnancyAndGdmRiskFactorsViewModel
     {
-        [Required, Range(1, 25)]
+        [Required, Range(1, 20)]
         public int Gravida { get; set; }
         [Range(0, 20)]
         public int? Parity { get; set; }
         [Range(0, 20)]
         public int? Living { get; set; }
+        [Range(0, 20)]
+        public int? Stillbirth { get; set; }
+        
         public string PreviousBabyWeightOver4kg { get; set; }
         public string BabySizeLargerThanAverage { get; set; }
         [Range(0, 240)]
@@ -275,6 +278,7 @@ namespace Guides.Backend.ViewModels.Baseline
     public abstract class PhysicalActivityViewModel
     {
         //  Domain
+        public bool VigorousActivities { get; set; }
         [Range(0, 7)]
         public int? VigorousActivityDaysPerWeek { get; set; }
         [Range(0, 12)]
@@ -282,6 +286,7 @@ namespace Guides.Backend.ViewModels.Baseline
         [Range(0, 59)]
         public int? VigorousActivityMinutesPerDay { get; set; }
 
+        public bool ModerateActivities { get; set; }
         [Range(0, 7)]
         public int? ModerateActivityDaysPerWeek { get; set; }
         [Range(0, 12)]
@@ -289,6 +294,7 @@ namespace Guides.Backend.ViewModels.Baseline
         [Range(0, 59)]
         public int? ModerateActivityMinutesPerDay { get; set; }
 
+        public bool WalkingActivities { get; set; }
         [Range(0, 7)]
         public int? WalkingDaysPerWeek { get; set; }
         [Range(0, 12)]
@@ -296,6 +302,8 @@ namespace Guides.Backend.ViewModels.Baseline
         [Range(0, 59)]
         public int? WalkingMinutesPerDay { get; set; }
 
+        
+        public bool SittingActivities { get; set; }
         [Range(0, 7)]
         public int? SittingDaysPerWeek { get; set; }
         [Range(0, 12)]

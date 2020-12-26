@@ -4,14 +4,16 @@ using Guides.Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Guides.Backend.Migrations
 {
     [DbContext(typeof(GuidesContext))]
-    partial class GuidesContextModelSnapshot : ModelSnapshot
+    [Migration("20201226053111_RemovedAbortionsFromPRegnancy")]
+    partial class RemovedAbortionsFromPRegnancy
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -182,9 +184,6 @@ namespace Guides.Backend.Migrations
                     b.Property<DateTime>("DateOfActualEntry")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("ModerateActivities")
-                        .HasColumnType("bit");
-
                     b.Property<int?>("ModerateActivityDaysPerWeek")
                         .HasColumnType("int");
 
@@ -209,9 +208,6 @@ namespace Guides.Backend.Migrations
                     b.Property<int>("RespondentId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("SittingActivities")
-                        .HasColumnType("bit");
-
                     b.Property<int?>("SittingDaysPerWeek")
                         .HasColumnType("int");
 
@@ -221,9 +217,6 @@ namespace Guides.Backend.Migrations
                     b.Property<int?>("SittingMinutesPerDay")
                         .HasColumnType("int");
 
-                    b.Property<bool>("VigorousActivities")
-                        .HasColumnType("bit");
-
                     b.Property<int?>("VigorousActivityDaysPerWeek")
                         .HasColumnType("int");
 
@@ -232,9 +225,6 @@ namespace Guides.Backend.Migrations
 
                     b.Property<int?>("VigorousActivityMinutesPerDay")
                         .HasColumnType("int");
-
-                    b.Property<bool>("WalkingActivities")
-                        .HasColumnType("bit");
 
                     b.Property<int?>("WalkingDaysPerWeek")
                         .HasColumnType("int");
