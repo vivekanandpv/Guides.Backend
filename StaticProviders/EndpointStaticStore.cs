@@ -42,7 +42,7 @@
         public const string AdminReset = "admin-reset";
         public const string LoginReset = "login-reset";
         public const string Update = "update";
-        public const string GetFormStatusNavigator = "form-status-navigator";
+        public const string GetFormStatusNavigator = "form-status-navigator/{id:int}";
         public const string GetRespondentsWithFormStatus = "respondents-with-status";
 
         public const string GetById = "{id:int}";
