@@ -124,5 +124,66 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
             
             throw new UserActionPreventedException();
         }
+        
+        public async Task<FormStatusNavigatorViewModel> GetFormStatusNavigator(int id)
+        {
+            var respondentDb = await this._repository.Get(id);
+
+            if (respondentDb == null)
+            {
+                this._logger.LogInformation($"Non-existent respondent id entered for form status navigator: {id}");
+                throw new UserActionPreventedException();
+            }
+
+            if (respondentDb.Country != Country.Uganda)
+            {
+                this._logger.LogInformation($"Cross region respondent id entered for form status navigator: {id}");
+                throw new UserActionPreventedException();
+            }
+
+            return new FormStatusNavigatorViewModel
+            {
+                RespondentId = respondentDb.Id,
+                BlockedForFurtherEntry = respondentDb.DeathRecord != null || respondentDb.LossToFollowUp != null,
+                DietaryBehaviour = respondentDb.DietaryBehaviour != null,
+                PhysicalActivity = respondentDb.PhysicalActivity != null,
+                SocioDemographic = respondentDb.SocioDemographic != null,
+                TobaccoAndAlcoholUse = respondentDb.TobaccoAndAlcoholUse != null,
+                PregnancyAndGdmRiskFactors = respondentDb.PregnancyAndGdmRiskFactors != null,
+                RegisteredOn = respondentDb.RegisteredOn
+            };
+        }
+
+        public async Task<IEnumerable<RespondentWithFormStatusViewModel>> GetRespondentList()
+        {
+            return await this._repository
+                .Get()
+                .Select(r => GetFormStatus(r)).ToListAsync();
+        }
+
+        private static RespondentWithFormStatusViewModel GetFormStatus(Respondent respondent)
+        {
+            return new RespondentWithFormStatusViewModel
+            {
+                RespondentId = respondent.Id,
+                DietaryBehaviour = respondent.DietaryBehaviour != null,
+                DietaryBehaviourRegisteredOn = respondent.DietaryBehaviour?.RegisteredOn,
+                LossToFollowUp = respondent.LossToFollowUp != null,
+                LossToFollowUpRegisteredOn = respondent.LossToFollowUp?.RegisteredOn,
+                PhysicalActivity = respondent.PhysicalActivity != null,
+                PhysicalActivityRegisteredOn = respondent.PhysicalActivity?.RegisteredOn,
+                DeathRecord = respondent.DeathRecord != null,
+                DeathRecordRegisteredOn = respondent.DeathRecord?.RegisteredOn,
+                SocioDemographic = respondent.SocioDemographic != null,
+                SocioDemographicRegisteredOn = respondent.SocioDemographic?.RegisteredOn,
+                TobaccoAndAlcoholUse = respondent.TobaccoAndAlcoholUse != null,
+                TobaccoAndAlcoholUseRegisteredOn = respondent.TobaccoAndAlcoholUse?.RegisteredOn,
+                PregnancyAndGdmRiskFactors = respondent.PregnancyAndGdmRiskFactors != null,
+                PregnancyAndGdmRiskFactorsRegisteredOn = respondent.PregnancyAndGdmRiskFactors?.RegisteredOn,
+                FullName = respondent.FullName,
+                RegisteredOn = respondent.RegisteredOn,
+                HusbandName = respondent.HusbandName
+            };
+        }
     }
 }

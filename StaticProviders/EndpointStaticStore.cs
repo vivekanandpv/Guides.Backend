@@ -9,6 +9,9 @@
 
         public const string RespondentsIndiaTemplate = "api/respondents/india";
         public const string RespondentsUgandaTemplate = "api/respondents/uganda";
+        
+        public const string AncillaryIndiaTemplate = "api/ancillary/india";
+        public const string AncillaryUgandaTemplate = "api/ancillary/uganda";
 
         public const string SocioDemographicIndiaTemplate = "api/socio-demographic/india";
         public const string SocioDemographicUgandaTemplate = "api/socio-demographic/uganda";
@@ -39,6 +42,8 @@
         public const string AdminReset = "admin-reset";
         public const string LoginReset = "login-reset";
         public const string Update = "update";
+        public const string GetFormStatusNavigator = "form-status-navigator";
+        public const string GetRespondentsWithFormStatus = "respondents-with-status";
 
         public const string GetById = "{id:int}";
     }

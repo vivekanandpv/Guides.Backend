@@ -445,4 +445,40 @@ namespace Guides.Backend.ViewModels.Baseline
     public class LossToFollowUpListViewModel : LossToFollowUpUpdateViewModel
     {
     }
+
+    public abstract class FormStatusBase
+    {
+        public int RespondentId { get; set; }
+        public DateTime RegisteredOn { get; set; }
+        
+        public bool SocioDemographic { get; set; }
+        public bool PregnancyAndGdmRiskFactors { get; set; }
+        public bool TobaccoAndAlcoholUse { get; set; }
+        public bool PhysicalActivity { get; set; }
+        public bool DietaryBehaviour { get; set; }
+    }
+
+    public class FormStatusNavigatorViewModel : FormStatusBase
+    {
+        public bool BlockedForFurtherEntry { get; set; }
+    }
+
+    public abstract class FormStatusChronologyBase : FormStatusBase
+    {
+        public DateTime? SocioDemographicRegisteredOn { get; set; }
+        public DateTime? PregnancyAndGdmRiskFactorsRegisteredOn { get; set; }
+        public DateTime? TobaccoAndAlcoholUseRegisteredOn { get; set; }
+        public DateTime? PhysicalActivityRegisteredOn { get; set; }
+        public DateTime? DietaryBehaviourRegisteredOn { get; set; }
+    }
+
+    public class RespondentWithFormStatusViewModel:FormStatusChronologyBase
+    {
+        public string FullName { get; set; }
+        public string HusbandName { get; set; }
+        public bool DeathRecord { get; set; }
+        public DateTime? DeathRecordRegisteredOn { get; set; }
+        public bool LossToFollowUp { get; set; }
+        public DateTime? LossToFollowUpRegisteredOn { get; set; }
+    }
 }
