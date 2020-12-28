@@ -58,6 +58,15 @@ namespace Guides.Backend.Filters
                 context.ExceptionHandled = true;
             }
             
+            if (context.Exception is RegistrationDateDiscrepancyException)
+            {
+                context.Result = new ObjectResult(new { Message = "Discrepancy found in date of registration" })
+                {
+                    StatusCode = HttpStatusCodeStore.BadRequest
+                };
+                context.ExceptionHandled = true;
+            }
+            
             if (context.Exception is ServiceNotAvailableException)
             {
                 context.Result = new ObjectResult(new { Message = "Could not process your request" })

@@ -12,4 +12,8 @@ namespace Guides.Backend.Exceptions
     public class DuplicatePreventionException : Exception
     {
     }
+    
+    public class RegistrationDateDiscrepancyException : Exception
+    {
+    }
 }

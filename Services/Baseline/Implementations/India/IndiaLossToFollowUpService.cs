@@ -102,6 +102,12 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
                 throw new DuplicatePreventionException();
             }
             
+            if (respondent.RegisteredOn.Date > model.RegisteredOn.Date)
+            {
+                this._logger.LogInformation($"Prevented registration of loss to follow-up (India) for RID: {viewModel.RespondentId} because of registration date discrepancy. Baseline: {respondent.RegisteredOn.Date:dd-MM-yyyy}; Form: {model.RegisteredOn.Date:dd-MM-yyyy}");
+                throw new RegistrationDateDiscrepancyException();
+            }
+            
             model.Respondent = respondent;
             model.RegisteredBy = initiatedBy;
             model.DateOfActualEntry = DateTime.UtcNow;
