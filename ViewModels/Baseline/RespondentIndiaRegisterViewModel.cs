@@ -466,19 +466,27 @@ namespace Guides.Backend.ViewModels.Baseline
     public abstract class FormStatusChronologyBase : FormStatusBase
     {
         public DateTime? SocioDemographicRegisteredOn { get; set; }
+        public int? SocioDemographicId { get; set; }
         public DateTime? PregnancyAndGdmRiskFactorsRegisteredOn { get; set; }
+        public int? PregnancyAndGdmRiskFactorsId { get; set; }
         public DateTime? TobaccoAndAlcoholUseRegisteredOn { get; set; }
+        public int? TobaccoAndAlcoholUseId { get; set; }
         public DateTime? PhysicalActivityRegisteredOn { get; set; }
+        public int? PhysicalActivityId { get; set; }
         public DateTime? DietaryBehaviourRegisteredOn { get; set; }
+        public int? DietaryBehaviourId { get; set; }
     }
 
     public class RespondentWithFormStatusViewModel:FormStatusChronologyBase
     {
         public string FullName { get; set; }
         public string HusbandName { get; set; }
+        public string Country { get; set; }
         public bool DeathRecord { get; set; }
         public DateTime? DeathRecordRegisteredOn { get; set; }
+        public int? DeathRecordId { get; set; }
         public bool LossToFollowUp { get; set; }
         public DateTime? LossToFollowUpRegisteredOn { get; set; }
+        public int? LossToFollowUpId { get; set; }
     }
 }

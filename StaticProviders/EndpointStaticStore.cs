@@ -44,6 +44,7 @@
         public const string Update = "update";
         public const string GetFormStatusNavigator = "form-status-navigator/{id:int}";
         public const string GetRespondentsWithFormStatus = "respondents-with-status";
+        public const string GetRespondentWithFormStatus = "respondents-with-status/{id:int}";
 
         public const string GetById = "{id:int}";
     }

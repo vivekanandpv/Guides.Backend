@@ -158,7 +158,27 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
         {
             return await this._repository
                 .Get()
+                .Where(r => r.Country == Country.Uganda)
                 .Select(r => GetFormStatus(r)).ToListAsync();
+        }
+
+        public async Task<RespondentWithFormStatusViewModel> GetRespondentWithFormStatus(int id)
+        {
+            var respondentDb = await this._repository.Get(id);
+
+            if (respondentDb == null)
+            {
+                this._logger.LogInformation($"Non-existent respondent id entered for form status: {id}");
+                throw new UserActionPreventedException();
+            }
+
+            if (respondentDb.Country != Country.Uganda)
+            {
+                this._logger.LogInformation($"Cross region respondent id entered for form status: {id}");
+                throw new UserActionPreventedException();
+            }
+
+            return GetFormStatus(respondentDb);
         }
 
         private static RespondentWithFormStatusViewModel GetFormStatus(Respondent respondent)
@@ -182,7 +202,15 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
                 PregnancyAndGdmRiskFactorsRegisteredOn = respondent.PregnancyAndGdmRiskFactors?.RegisteredOn,
                 FullName = respondent.FullName,
                 RegisteredOn = respondent.RegisteredOn,
-                HusbandName = respondent.HusbandName
+                HusbandName = respondent.HusbandName,
+                Country = respondent.Country.ToString(),
+                DeathRecordId = respondent.DeathRecord?.Id,
+                DietaryBehaviourId = respondent.DietaryBehaviour?.Id,
+                LossToFollowUpId = respondent.LossToFollowUp?.Id,
+                PhysicalActivityId = respondent.PhysicalActivity?.Id,
+                PregnancyAndGdmRiskFactorsId = respondent.PregnancyAndGdmRiskFactors?.Id,
+                SocioDemographicId = respondent.SocioDemographic?.Id,
+                TobaccoAndAlcoholUseId = respondent.TobaccoAndAlcoholUse?.Id
             };
         }
     }

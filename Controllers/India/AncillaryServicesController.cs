@@ -31,5 +31,9 @@ namespace Guides.Backend.Controllers.India
         
         [HttpGet(EndpointStaticStore.GetRespondentsWithFormStatus)]
         public async Task<ActionResult<IEnumerable<RespondentWithFormStatusViewModel>>> GetRespondentsWithFormStatus() => Ok(await _service.GetRespondentList());
+
+        [HttpGet(EndpointStaticStore.GetRespondentWithFormStatus)]
+        public async Task<ActionResult<FormStatusNavigatorViewModel>> GetRespondentWithFormStatus(int id) => Ok(await _service.GetRespondentWithFormStatus(id));
+
     }
 }
