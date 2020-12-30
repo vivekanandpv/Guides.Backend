@@ -188,6 +188,21 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
                 return null;
             }
 
+            var intResult = int.TryParse(pattern, out var rid);
+
+            if (intResult)
+            {
+                return await this._repository
+                    .Get()
+                    .Where(r => r.Country == Country.Uganda && r.Id == rid)
+                    .Select(r => new RespondentSearchViewModel
+                    {
+                        RespondentId = r.Id,
+                        FullName = r.FullName,
+                        HusbandName = r.HusbandName
+                    }).ToListAsync();
+            }
+
             return await this._repository
                 .Get()
                 .Where(r => r.Country == Country.Uganda &&
