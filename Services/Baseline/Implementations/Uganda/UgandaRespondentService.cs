@@ -181,6 +181,29 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
             return GetFormStatus(respondentDb);
         }
 
+        public async Task<IEnumerable<RespondentSearchViewModel>> GetRespondentByPattern(string pattern)
+        {
+            if (string.IsNullOrEmpty(pattern))
+            {
+                return null;
+            }
+
+            return await this._repository
+                .Get()
+                .Where(r => r.Country == Country.Uganda &&
+                            (
+                                r.FullName.ToLower().Contains(pattern.ToLower()) ||
+                                r.HusbandName.ToLower().Contains(pattern.ToLower())
+                            )
+                )
+                .Select(r => new RespondentSearchViewModel
+                {
+                    RespondentId = r.Id,
+                    FullName = r.FullName,
+                    HusbandName = r.HusbandName
+                }).ToListAsync();
+        }
+
         private static RespondentWithFormStatusViewModel GetFormStatus(Respondent respondent)
         {
             return new RespondentWithFormStatusViewModel

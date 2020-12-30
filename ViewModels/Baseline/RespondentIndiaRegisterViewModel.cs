@@ -489,4 +489,11 @@ namespace Guides.Backend.ViewModels.Baseline
         public DateTime? LossToFollowUpRegisteredOn { get; set; }
         public int? LossToFollowUpId { get; set; }
     }
+
+    public class RespondentSearchViewModel
+    {
+        public int RespondentId { get; set; }
+        public string FullName { get; set; }
+        public string HusbandName { get; set; }
+    }
 }

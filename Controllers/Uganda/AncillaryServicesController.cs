@@ -34,5 +34,8 @@ namespace Guides.Backend.Controllers.Uganda
 
         [HttpGet(EndpointStaticStore.GetRespondentWithFormStatus)]
         public async Task<ActionResult<FormStatusNavigatorViewModel>> GetRespondentWithFormStatus(int id) => Ok(await _service.GetRespondentWithFormStatus(id));
+
+        [HttpGet(EndpointStaticStore.GetRespondentByPattern)]
+        public async Task<ActionResult<IEnumerable<RespondentSearchViewModel>>> GetRespondentByPattern(string pattern) => Ok(await _service.GetRespondentByPattern(pattern));
     }
 }

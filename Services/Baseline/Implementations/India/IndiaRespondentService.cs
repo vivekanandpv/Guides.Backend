@@ -26,8 +26,8 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
         private readonly ILogger _logger;
 
         public IndiaRespondentService(
-            IRespondentRepository repository, 
-            IAuthRepository authRepository, 
+            IRespondentRepository repository,
+            IAuthRepository authRepository,
             IMapper mapper,
             ILoggerFactory loggerFactory)
         {
@@ -57,7 +57,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
                 this._logger.LogInformation($"Cross region access to respondent id: {id} is blocked");
                 throw new UserActionNotSupportedException();
             }
-                
+
             return this._mapper.Map<Respondent, RespondentIndiaListViewModel>(respondent);
         }
 
@@ -74,7 +74,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
                 this._logger.LogInformation($"Prevented duplicate registration of respondent: {viewModel.FullName} by: {initiatedBy}");
                 throw new DuplicatePreventionException();
             }
-            
+
             this._logger.LogInformation($"Respondent registration of {viewModel.FullName} is initiated");
             var respondent = this._mapper.Map<RespondentIndiaRegisterViewModel, Respondent>(viewModel);
             respondent.Country = Country.India;
@@ -95,7 +95,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
                 this._logger.LogInformation($"Discrepancy found in id: {id} and data sent: {viewModel.Id}");
                 throw new UserActionPreventedException();
             }
-            
+
             var respondentDb = await this._repository.Get(id);
 
             if (respondentDb == null)
@@ -111,17 +111,17 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
             var createdBy = respondentDb.User.Email;
 
             var roleIntersection = roles.Intersect(GeneralStaticDataProvider.IndiaAdministratorRoles.Split(','));
-            
+
             if (respondentDb.User.Email == initiatedBy || roleIntersection.Any())
             {
                 this._logger.LogInformation($"Respondent data update initiated for id: {id} by {initiatedBy}");
                 this._mapper.Map(viewModel, respondentDb);
                 await this._repository.Save(respondentDb);
-                
+
                 this._logger.LogInformation($"Respondent data update completed for id: {id} by {initiatedBy}");
                 return this._mapper.Map<Respondent, RespondentIndiaListViewModel>(respondentDb);
             }
-            
+
             throw new UserActionPreventedException();
         }
 
@@ -179,6 +179,29 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
             }
 
             return GetFormStatus(respondentDb);
+        }
+
+        public async Task<IEnumerable<RespondentSearchViewModel>> GetRespondentByPattern(string pattern)
+        {
+            if (string.IsNullOrEmpty(pattern))
+            {
+                return null;
+            }
+
+            return await this._repository
+                .Get()
+                .Where(r => r.Country == Country.India &&
+                            (
+                                r.FullName.ToLower().Contains(pattern.ToLower()) ||
+                                r.HusbandName.ToLower().Contains(pattern.ToLower())
+                            )
+                      )
+                .Select(r => new RespondentSearchViewModel
+                {
+                    RespondentId = r.Id,
+                    FullName = r.FullName,
+                    HusbandName = r.HusbandName
+                }).ToListAsync();
         }
 
         private static RespondentWithFormStatusViewModel GetFormStatus(Respondent respondent)

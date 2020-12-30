@@ -11,5 +11,6 @@ namespace Guides.Backend.Services.Baseline.Interfaces.Uganda
         Task<FormStatusNavigatorViewModel> GetFormStatusNavigator(int id);
         Task<IEnumerable<RespondentWithFormStatusViewModel>> GetRespondentList();
         Task<RespondentWithFormStatusViewModel> GetRespondentWithFormStatus(int id);
+        Task<IEnumerable<RespondentSearchViewModel>> GetRespondentByPattern(string pattern);
     }
 }
