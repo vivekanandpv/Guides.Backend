@@ -80,6 +80,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
             respondent.Country = Country.India;
             respondent.User = await this._authRepository.GetUserByEmail(viewModel.RegisteredBy);
             respondent.DateOfActualEntry = DateTime.UtcNow;
+            respondent.IsEligible = GetEligibility(respondent);
 
             this._logger.LogInformation($"Persistence for respondent registration of {viewModel.FullName} is initiated");
             await this._repository.Add(respondent);
@@ -150,7 +151,8 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
                 SocioDemographic = respondentDb.SocioDemographic != null,
                 TobaccoAndAlcoholUse = respondentDb.TobaccoAndAlcoholUse != null,
                 PregnancyAndGdmRiskFactors = respondentDb.PregnancyAndGdmRiskFactors != null,
-                RegisteredOn = respondentDb.RegisteredOn
+                RegisteredOn = respondentDb.RegisteredOn,
+                IsEligible = respondentDb.IsEligible
             };
         }
 
@@ -248,8 +250,16 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
                 PhysicalActivityId = respondent.PhysicalActivity?.Id,
                 PregnancyAndGdmRiskFactorsId = respondent.PregnancyAndGdmRiskFactors?.Id,
                 SocioDemographicId = respondent.SocioDemographic?.Id,
-                TobaccoAndAlcoholUseId = respondent.TobaccoAndAlcoholUse?.Id
+                TobaccoAndAlcoholUseId = respondent.TobaccoAndAlcoholUse?.Id,
+                IsEligible = respondent.IsEligible
             };
+        }
+
+        private static bool GetEligibility(Respondent respondent)
+        {
+            return respondent.WillingToParticipate 
+                   && respondent.AvailableForFollowup 
+                   && respondent.InformedConsent;
         }
     }
 }

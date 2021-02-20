@@ -9,7 +9,7 @@ namespace Guides.Backend.StaticProviders
 {
     public static class GeneralStaticDataProvider
     {
-        public static readonly string[] AllowedHosts = { "http://localhost:4200", "https://app.guides.athenaeum.in" };
+        public static readonly string[] AllowedHosts = { "http://localhost:4200", "https://app.guides.athenaeum.in", "https://guides-demo.athenaeum.in" };
         public static readonly string[] AllowedMethods = {
             "GET", "POST", "PUT", "OPTIONS"
         };

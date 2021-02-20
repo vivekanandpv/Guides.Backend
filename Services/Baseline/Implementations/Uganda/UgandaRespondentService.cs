@@ -80,6 +80,7 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
             respondent.Country = Country.Uganda;
             respondent.User = await this._authRepository.GetUserByEmail(viewModel.RegisteredBy);
             respondent.DateOfActualEntry = DateTime.UtcNow;
+            respondent.IsEligible = GetEligibility(respondent);
 
             this._logger.LogInformation($"Persistence for respondent registration of {viewModel.FullName} is initiated");
             await this._repository.Add(respondent);
@@ -250,6 +251,13 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
                 SocioDemographicId = respondent.SocioDemographic?.Id,
                 TobaccoAndAlcoholUseId = respondent.TobaccoAndAlcoholUse?.Id
             };
+        }
+
+        private static bool GetEligibility(Respondent respondent)
+        {
+            return respondent.WillingToParticipate 
+                   && respondent.AvailableForFollowup 
+                   && respondent.InformedConsent;
         }
     }
 }

@@ -83,6 +83,12 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
                 this._logger.LogInformation($"Prevented registration of death record (India) for non existent RID: {viewModel.RespondentId}");
                 throw new UserActionPreventedException();
             }
+
+            if (!respondent.IsEligible)
+            {
+                this._logger.LogInformation($"Prevented registration of death record (India) for ineligible respondent RID: {viewModel.RespondentId}");
+                throw new UserActionPreventedException();
+            }
             
             if (respondent.DeathRecord != null)
             {

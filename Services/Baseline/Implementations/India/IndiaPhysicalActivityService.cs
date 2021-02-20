@@ -84,6 +84,12 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
                 throw new UserActionPreventedException();
             }
             
+            if (!respondent.IsEligible)
+            {
+                this._logger.LogInformation($"Prevented registration of physical activity (India) for ineligible respondent RID: {viewModel.RespondentId}");
+                throw new UserActionPreventedException();
+            }
+
             if (respondent.DeathRecord != null)
             {
                 this._logger.LogInformation($"Prevented registration of physical activity (India) for deceased respondent RID: {viewModel.RespondentId}");

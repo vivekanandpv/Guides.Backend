@@ -29,6 +29,23 @@ namespace Guides.Backend.ViewModels.Baseline
         public string OwnAMobilePhone { get; set; }
         public string SecondaryAccessToMobilePhone { get; set; }
         public string SecondaryAccessToSmartphone { get; set; }
+
+        //  Revision: new fields for eligibility determination
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+        public DateTime? DateOfBirth { get; set; }
+        [Range(18, 50)]
+        public int? Age { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+        public DateTime? LMP { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+        public DateTime? EDD { get; set; }
+        public bool WillingToParticipate { get; set; }
+        public bool AvailableForFollowup { get; set; }
+        public bool InformedConsent { get; set; }
+        public bool IsEligible { get; set; }
     }
 
     public abstract class RespondentIndiaViewModelBase : RespondentViewModelBase
@@ -111,11 +128,7 @@ namespace Guides.Backend.ViewModels.Baseline
     public abstract class SocioDemographicViewModel
     {
         //  Domain
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
-        public DateTime? DateOfBirth { get; set; }
-        [Range(18, 50)]
-        public int? Age { get; set; }
+        
         public string Religion { get; set; }
         public string MaritalStatus { get; set; }
         [Required, Range(1, 20)]
@@ -200,19 +213,16 @@ namespace Guides.Backend.ViewModels.Baseline
         public string BabySizeLargerThanAverage { get; set; }
         [Range(0, 240)]
         public int? MonthsFromLastDelivery { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
-        public DateTime? LMP { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
-        public DateTime? EDD { get; set; }
+        
         [Range(0, 8)]
         public int? FirstAncVisitMonth { get; set; }
         public string WeightMeasuredInCurrentPregnancy { get; set; }
         [Range(25, 150)]
         public double? Weight { get; set; }
         public string HtnOrPreEclampsia { get; set; }
+        public string HtnOrPreEclampsiaCurrent { get; set; }
         public string Gdm { get; set; }
+        public string GdmCurrent { get; set; }
         public string Dm { get; set; }
         public string DiabetesType { get; set; }
         public string DmInFamily { get; set; }
@@ -450,6 +460,7 @@ namespace Guides.Backend.ViewModels.Baseline
     {
         public int RespondentId { get; set; }
         public DateTime RegisteredOn { get; set; }
+        public bool IsEligible { get; set; }
         
         public bool SocioDemographic { get; set; }
         public bool PregnancyAndGdmRiskFactors { get; set; }

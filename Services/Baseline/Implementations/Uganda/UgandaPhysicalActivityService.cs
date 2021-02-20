@@ -83,6 +83,12 @@ namespace Guides.Backend.Services.Baseline.Implementations.Uganda
                 this._logger.LogInformation($"Prevented registration of physical activity (Uganda) for non existent RID: {viewModel.RespondentId}");
                 throw new UserActionPreventedException();
             }
+
+            if (!respondent.IsEligible)
+            {
+                this._logger.LogInformation($"Prevented registration of physical activity (Uganda) for ineligible respondent RID: {viewModel.RespondentId}");
+                throw new UserActionPreventedException();
+            }
             
             if (respondent.DeathRecord != null)
             {

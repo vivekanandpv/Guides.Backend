@@ -109,6 +109,16 @@ namespace Guides.Backend.Domain
         public double? RegistrationLatitude { get; set; }
         public double? RegistrationLongitude { get; set; }
 
+        //  Revision: new fields for eligibility determination
+        public DateTime? DateOfBirth { get; set; }
+        public int? Age { get; set; }
+        public DateTime? LMP { get; set; }
+        public DateTime? EDD { get; set; }
+        public bool WillingToParticipate { get; set; }
+        public bool AvailableForFollowup { get; set; }
+        public bool InformedConsent { get; set; }
+        public bool IsEligible { get; set; }
+
         public virtual User User { get; set; }
         public int UserId { get; set; }
 
@@ -187,7 +197,9 @@ namespace Guides.Backend.Domain
         public GeneralTriplet WeightMeasuredInCurrentPregnancy { get; set; }
         public double? Weight { get; set; }
         public GeneralTriplet HtnOrPreEclampsia { get; set; }
+        public GeneralTriplet HtnOrPreEclampsiaCurrent { get; set; }
         public GeneralTriplet Gdm { get; set; }
+        public GeneralTriplet GdmCurrent { get; set; }
         public GeneralTriplet Dm { get; set; }
         public DiabetesType DiabetesType { get; set; }
         public GeneralTriplet DmInFamily { get; set; }
