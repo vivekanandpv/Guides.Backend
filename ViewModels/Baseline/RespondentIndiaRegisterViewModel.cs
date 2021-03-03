@@ -56,11 +56,11 @@ namespace Guides.Backend.ViewModels.Baseline
         public long? RCHID { get; set; }
         [MaxLength(50), Required]
         public string PHC { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string ANM { get; set; }
         public long? ANMTelephone1 { get; set; }
         public long? ANMTelephone2 { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string Asha { get; set; }
         public long? AshaTelephone1 { get; set; }
         public long? AshaTelephone2 { get; set; }
