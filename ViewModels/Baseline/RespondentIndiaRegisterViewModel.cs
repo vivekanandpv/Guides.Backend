@@ -499,6 +499,12 @@ namespace Guides.Backend.ViewModels.Baseline
         public bool LossToFollowUp { get; set; }
         public DateTime? LossToFollowUpRegisteredOn { get; set; }
         public int? LossToFollowUpId { get; set; }
+        
+        public bool NotWillingToParticipate { get; set; }
+        public bool NotAvailableForFollowUp { get; set; }
+        public bool NoInformedConsent { get; set; }
+        public bool AgeNotAcceptable { get; set; }
+        public bool NoLMPOrEDD { get; set; }
     }
 
     public class RespondentSearchViewModel

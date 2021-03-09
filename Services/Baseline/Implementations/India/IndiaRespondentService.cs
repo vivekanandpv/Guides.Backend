@@ -251,7 +251,12 @@ namespace Guides.Backend.Services.Baseline.Implementations.India
                 PregnancyAndGdmRiskFactorsId = respondent.PregnancyAndGdmRiskFactors?.Id,
                 SocioDemographicId = respondent.SocioDemographic?.Id,
                 TobaccoAndAlcoholUseId = respondent.TobaccoAndAlcoholUse?.Id,
-                IsEligible = respondent.IsEligible
+                IsEligible = respondent.IsEligible,
+                AgeNotAcceptable = !respondent.Age.HasValue && !respondent.DateOfBirth.HasValue,
+                NoInformedConsent = !respondent.InformedConsent,
+                NotWillingToParticipate = !respondent.WillingToParticipate,
+                NotAvailableForFollowUp = !respondent.AvailableForFollowup,
+                NoLMPOrEDD = !respondent.LMP.HasValue && !respondent.EDD.HasValue
             };
         }
 
