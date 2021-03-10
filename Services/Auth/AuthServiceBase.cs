@@ -194,6 +194,8 @@ namespace Guides.Backend.Services.Auth
 
                 await _repository.UpdateUser(userDb);
                 _logger.LogInformation($"Change password completed for user {viewModel.Username}");
+
+                return; // else, it will fall through!
             }
 
             _logger.LogInformation($"Change password prevented as the current password is wrong for user: {viewModel.Username}");
