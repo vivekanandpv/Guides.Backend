@@ -85,7 +85,8 @@ namespace Guides.Backend.Domain
         None_or_early_childhood_education,
         Primary,
         Secondary_or_high_school,
-        Graduate_or_post_graduate
+        Graduate_or_post_graduate,
+        Do_not_know
     }
 
     public enum Employment
